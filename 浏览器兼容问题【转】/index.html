@@ -1,0 +1,783 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>浏览器兼容问题【转】 | 求知若饥，谦虚若愚</title>
+    <meta name="author" content="Zhang Shuang">
+    
+    <meta name="description" content="张爽的个人博客">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="浏览器兼容问题【转】"/>
+    <meta property="og:site_name" content="Zhang Shuang&#39;s Blog"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="Zhang Shuang&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">Zhang Shuang&#39;s Blog</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="/img/header.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">张爽</p>
+                        <p class="desc">Web前端/舞蹈</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/前端/">
+                    前端 <span class="right">30 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/插件开发/">
+                    插件开发 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/插件开发/chrome/">
+                    chrome <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/TypeScript/">
+                    TypeScript <span class="right">4 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/JavaScript/">
+                    JavaScript <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/vue/">
+                    vue <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/es6/">
+                    es6 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/H5游戏/">
+                    H5游戏 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Draw/">
+                    Draw <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/echarts/">
+                    echarts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/egret/">
+                    egret <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/highcharts/">
+                    highcharts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/nodejs/">
+                    nodejs <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/用户体验/">
+                    用户体验 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/自动化/">
+                    自动化 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Hybrid/">
+                    Hybrid <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/兼容性/">
+                    兼容性 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/shell/">
+                    shell <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/工具/">
+                    工具 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/前端/">前端</a><a class="breadcrumb" href="/categories/前端/兼容性/">兼容性</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>浏览器兼容问题【转】</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2017-02-24T16:00:00.000Z"><a href="/浏览器兼容问题【转】/">2017-02-25</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/兼容性/" class="chip pink lighten-1">兼容性</a>
+        
+            <a href="/tags/CSS/" class="chip pink lighten-1">CSS</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-ie6-0横向margin加倍"><span class="section table-of-contents-text">1. ie6.0横向margin加倍</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-ie6-0下默认有行高"><span class="section table-of-contents-text">2. ie6.0下默认有行高</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-在各个浏览器下img有空隙-原因是：回车。"><span class="section table-of-contents-text">3. 在各个浏览器下img有空隙(原因是：回车。)</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-一个父标签与几个子标签嵌套，父标签不浮动，子标签float，子标签不撑开父的高度。"><span class="section table-of-contents-text">4. 一个父标签与几个子标签嵌套，父标签不浮动，子标签float，子标签不撑开父的高度。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#5-Ie6下，不识别最大宽、高度和最小宽高度，意即min-width-height和-Max-width-height在ie6中没效果，"><span class="section table-of-contents-text">5. Ie6下，不识别最大宽、高度和最小宽高度，意即min-width/height和 Max-width/height在ie6中没效果，</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#6-Ie6里面：如li设宽、高，并且li里面的标签浮动，那么li之间会有间距"><span class="section table-of-contents-text">6. Ie6里面：如li设宽、高，并且li里面的标签浮动，那么li之间会有间距</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#7-li之间有间距"><span class="section table-of-contents-text">7. li之间有间距</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#9-当定义行内元素为包含框时，且包含框包含的绝对定位元素以百分比为单位进行定位时，会出现混乱。"><span class="section table-of-contents-text">9. 当定义行内元素为包含框时，且包含框包含的绝对定位元素以百分比为单位进行定位时，会出现混乱。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#10-当多个浮动元素中间夹杂着HTML注释语句时，如果浮动元素宽度为100-，则在下一行多显示一个上一行最后一个字符。"><span class="section table-of-contents-text">10. 当多个浮动元素中间夹杂着HTML注释语句时，如果浮动元素宽度为100%，则在下一行多显示一个上一行最后一个字符。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#11-opacity-定义元素的不透明度"><span class="section table-of-contents-text">11. opacity 定义元素的不透明度</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#12-两个块元素，竖向的margin值不增加，会重叠，其间距为最大margin值。"><span class="section table-of-contents-text">12. 两个块元素，竖向的margin值不增加，会重叠，其间距为最大margin值。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#13-优先级："><span class="section table-of-contents-text">13. 优先级：</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#14-火狐不识别background-position-y-或background-position-x"><span class="section table-of-contents-text">14. 火狐不识别background-position-y 或background-position-x;</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#15-ie6-不支持-fixed"><span class="section table-of-contents-text">15. ie6 不支持 fixed</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#16-解决-ie6-最大、最小宽高-hack方法"><span class="section table-of-contents-text">16.  解决 ie6 最大、最小宽高 hack方法</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#17-z-index不起作用的-bug"><span class="section table-of-contents-text">17.  z-index不起作用的 bug</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#18-ie各个版本hack"><span class="section table-of-contents-text">18.  ie各个版本hack</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h4 id="1-ie6-0横向margin加倍"><a href="#1-ie6-0横向margin加倍" class="headerlink" title="1. ie6.0横向margin加倍"></a>1. ie6.0横向margin加倍</h4><p>产生因素：块属性、float、有横向margin。<br>解决方法：display：inline；</p>
+<h4 id="2-ie6-0下默认有行高"><a href="#2-ie6-0下默认有行高" class="headerlink" title="2. ie6.0下默认有行高"></a>2. ie6.0下默认有行高</h4><p>解决方法：overflow:hidden;或font-size:0;或line-height：xx px；</p>
+<h4 id="3-在各个浏览器下img有空隙-原因是：回车。"><a href="#3-在各个浏览器下img有空隙-原因是：回车。" class="headerlink" title="3. 在各个浏览器下img有空隙(原因是：回车。)"></a>3. 在各个浏览器下img有空隙(原因是：回车。)</h4><a id="more"></a>
+<p>解决方法:让图片浮动。</p>
+<h4 id="4-一个父标签与几个子标签嵌套，父标签不浮动，子标签float，子标签不撑开父的高度。"><a href="#4-一个父标签与几个子标签嵌套，父标签不浮动，子标签float，子标签不撑开父的高度。" class="headerlink" title="4. 一个父标签与几个子标签嵌套，父标签不浮动，子标签float，子标签不撑开父的高度。"></a>4. 一个父标签与几个子标签嵌套，父标签不浮动，子标签float，子标签不撑开父的高度。</h4><p>解决方法：a 在子标签最后清浮动<br><code>{
+    &lt;div style=&quot;height:0;clear:both;&quot;&gt;
+    &amp;nbsp;
+    &lt;/div&gt;
+}</code><br>b 父标签添加<code>{overflow：hidden；}</code><br>c 给父标签设置高度</p>
+<h4 id="5-Ie6下，不识别最大宽、高度和最小宽高度，意即min-width-height和-Max-width-height在ie6中没效果，"><a href="#5-Ie6下，不识别最大宽、高度和最小宽高度，意即min-width-height和-Max-width-height在ie6中没效果，" class="headerlink" title="5. Ie6下，不识别最大宽、高度和最小宽高度，意即min-width/height和 Max-width/height在ie6中没效果，"></a>5. Ie6下，不识别最大宽、高度和最小宽高度，意即min-width/height和 Max-width/height在ie6中没效果，</h4><p>解决方法：<br>(1)：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.abc&#123;border:1px blue solid;width:200px;height:200px;&#125;</div><div class="line">html&gt;body .abc&#123;width:auto;height:auto;min-width:200px;min-height:200px;&#125;</div></pre></td></tr></table></figure></p>
+<p>(2)：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.abc&#123;width:200px;height:200px;_width:200px;_height:200px;&#125;</div></pre></td></tr></table></figure></p>
+<p>（因为ie6有一个特征，当定义一个高度时，如果内容超过高度，元素会自动调整高度。）</p>
+<h4 id="6-Ie6里面：如li设宽、高，并且li里面的标签浮动，那么li之间会有间距"><a href="#6-Ie6里面：如li设宽、高，并且li里面的标签浮动，那么li之间会有间距" class="headerlink" title="6. Ie6里面：如li设宽、高，并且li里面的标签浮动，那么li之间会有间距"></a>6. Ie6里面：如li设宽、高，并且li里面的标签浮动，那么li之间会有间距</h4><p>解决方法：li不设宽、高或者li内的标签不浮动</p>
+<h4 id="7-li之间有间距"><a href="#7-li之间有间距" class="headerlink" title="7. li之间有间距"></a>7. li之间有间距</h4><p>解决方法：li 设置<code>vertical-align:middle;</code><br>8 3像素问题：ie6下，当浮动元素与流动元素并列显示时，他们之间会存在三像素问题。<br>解决方法：用hack技术， 例如：所有浏览器通用 <code>height:100px;</code><br>ie6专用<code>_height:100px;</code><br>ie7专用<code>*+height:100px;</code><br>ie6/ie7共用<code>*height:100px;</code></p>
+<h4 id="9-当定义行内元素为包含框时，且包含框包含的绝对定位元素以百分比为单位进行定位时，会出现混乱。"><a href="#9-当定义行内元素为包含框时，且包含框包含的绝对定位元素以百分比为单位进行定位时，会出现混乱。" class="headerlink" title="9. 当定义行内元素为包含框时，且包含框包含的绝对定位元素以百分比为单位进行定位时，会出现混乱。"></a>9. 当定义行内元素为包含框时，且包含框包含的绝对定位元素以百分比为单位进行定位时，会出现混乱。</h4><pre><code>解决方法：在行内元素里加入`{zoom：1；}`
+</code></pre><h4 id="10-当多个浮动元素中间夹杂着HTML注释语句时，如果浮动元素宽度为100-，则在下一行多显示一个上一行最后一个字符。"><a href="#10-当多个浮动元素中间夹杂着HTML注释语句时，如果浮动元素宽度为100-，则在下一行多显示一个上一行最后一个字符。" class="headerlink" title="10. 当多个浮动元素中间夹杂着HTML注释语句时，如果浮动元素宽度为100%，则在下一行多显示一个上一行最后一个字符。"></a>10. 当多个浮动元素中间夹杂着HTML注释语句时，如果浮动元素宽度为100%，则在下一行多显示一个上一行最后一个字符。</h4><p>解决办法：给浮动元素添加<code>display:inline;</code>。</p>
+<h4 id="11-opacity-定义元素的不透明度"><a href="#11-opacity-定义元素的不透明度" class="headerlink" title="11. opacity 定义元素的不透明度"></a>11. opacity 定义元素的不透明度</h4><p><code>filter：alpha（opacity=80）；/*ie支持该属性*/</code><br><code>opacity：0.8；/*支持css3的浏览器*/</code></p>
+<h4 id="12-两个块元素，竖向的margin值不增加，会重叠，其间距为最大margin值。"><a href="#12-两个块元素，竖向的margin值不增加，会重叠，其间距为最大margin值。" class="headerlink" title="12. 两个块元素，竖向的margin值不增加，会重叠，其间距为最大margin值。"></a>12. 两个块元素，竖向的margin值不增加，会重叠，其间距为最大margin值。</h4><h4 id="13-优先级："><a href="#13-优先级：" class="headerlink" title="13. 优先级："></a>13. 优先级：</h4><p>被!important 注明的css属性具有最高优先级<code>(.abc{color:red !important;})</code>。但在ie6中!important具有一个bug:在同一组css属性中，!important不起作用。</p>
+<h4 id="14-火狐不识别background-position-y-或background-position-x"><a href="#14-火狐不识别background-position-y-或background-position-x" class="headerlink" title="14. 火狐不识别background-position-y 或background-position-x;"></a>14. 火狐不识别background-position-y 或background-position-x;</h4><h4 id="15-ie6-不支持-fixed"><a href="#15-ie6-不支持-fixed" class="headerlink" title="15. ie6 不支持 fixed"></a>15. ie6 不支持 fixed</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/*对于非IE6可以这样写*/</div><div class="line">#top&#123;  </div><div class="line">    position:fixed;  </div><div class="line">    bottom:0;  </div><div class="line">    right:20px;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line">/*但是IE6是不支持fixed定位的，需要另外重写*/</div><div class="line">#top&#123;  </div><div class="line">    position:fixed;  </div><div class="line">    _position:absolute;  </div><div class="line">    top:0;  </div><div class="line">    right:20px;  </div><div class="line">    _bottom:auto;  </div><div class="line">    _top:expression(eval(document.documentElement.scrollTop));</div><div class="line">&#125;  </div><div class="line"></div><div class="line">/*使用hack使IE6实现该效果，但这个东东会闪烁，需要以下代码*/</div><div class="line">*html&#123;  </div><div class="line">    background-image:url(about:blank);  </div><div class="line">    background-attachment:fixed;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line">/*使固定在顶部*/</div><div class="line">#top&#123;  </div><div class="line">    _position:absolute;  </div><div class="line">    _bottom:auto;  </div><div class="line">    _top:expression(eval(document.documentElement.scrollTop));  </div><div class="line">&#125;  </div><div class="line"></div><div class="line">/*固定在底部*/</div><div class="line">#top&#123;  </div><div class="line">    _position:absolute;  </div><div class="line">    _bottom:auto;  </div><div class="line">    _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop)||0)-(parseInt(this.currentStyle.marginBottom)||0)));  </div><div class="line">&#125;  </div><div class="line">/*垂直居中*/</div><div class="line">#top&#123;</div><div class="line">    position:fixed;</div><div class="line">    top:50%;</div><div class="line">    margin-top:-50px;</div><div class="line">    _position:absolute;</div><div class="line">    _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight/2));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="16-解决-ie6-最大、最小宽高-hack方法"><a href="#16-解决-ie6-最大、最小宽高-hack方法" class="headerlink" title="16.  解决 ie6 最大、最小宽高 hack方法"></a>16.  解决 ie6 最大、最小宽高 hack方法</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/* 最小宽度 */</div><div class="line">.min_width&#123;</div><div class="line">    min-width:300px;</div><div class="line">    _width:expression(parseInt(this.clientWidth) &lt; 300 ? &quot;300px&quot; : this.clientWidth);</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 最大宽度 */</div><div class="line">.max_width&#123;</div><div class="line">   max-width:600px;</div><div class="line">   _width:expression(parseInt(this.clientWidth) &gt; 600 ? &quot;600px&quot; : this.clientWidth);</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 最小高度 */</div><div class="line">.min_height&#123;</div><div class="line">   min-height:200px;</div><div class="line">   _height:expression(parseInt(this.clientHeight) &lt; 200 ? &quot;200px&quot; : this.clientHeight);</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 最大高度 */</div><div class="line">.max_height&#123;</div><div class="line">   max-height:400px;</div><div class="line">   _height:expression(parseInt(this.clientHeight) &gt; 400 ? &quot;400px&quot; : this.clientHeight);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="17-z-index不起作用的-bug"><a href="#17-z-index不起作用的-bug" class="headerlink" title="17.  z-index不起作用的 bug"></a>17.  z-index不起作用的 bug</h4><p>1）ie6下 首先讲讲第一种z-index无论设置多高都不起作用情况。这种情况发生的条件有三个：1、父标签position属性为relative；2、问题标签含有浮动(float)属性。<br>2）所有浏览器：它只认第一个爸爸<br>层级的高低不仅要看自己，还要看自己的老爸这个后台是否够硬。用术语具体描述为：<br>父标签position属性为relative或absolute时，子标签的absolute属性是相对于父标签而言的。而在IE6下，层级的表现有时候不是看子标签的z-index多高，而要看它们的父标签的z-index谁高谁低。</p>
+<h4 id="18-ie各个版本hack"><a href="#18-ie各个版本hack" class="headerlink" title="18.  ie各个版本hack"></a>18.  ie各个版本hack</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/*类内部hack：*/</div><div class="line">    .header &#123;_width:100px;&#125;            /* IE6专用*/</div><div class="line">    .header &#123;*+width:100px;&#125;        /* IE7专用*/</div><div class="line">    .header &#123;*width:100px;&#125;            /* IE6、IE7共用*/</div><div class="line">    .header &#123;width:100px\0;&#125;        /* IE8、IE9共用*/</div><div class="line">    .header &#123;width:100px\9;&#125;        /* IE6、IE7、IE8、IE9共用*/</div><div class="line">    .header &#123;width:330px\9\0;&#125;    /* IE9专用*/</div><div class="line"></div><div class="line">/*选择器Hack：*/</div><div class="line">    *html .header&#123;&#125;        /*IE6*/</div><div class="line">    *+html .header&#123;&#125;    /*IE7*/</div></pre></td></tr></table></figure>
+
+                
+<p class="pink-link-context">
+    <a href="/js作用域/" rel="next" title="js作用域">
+    上一篇：js作用域
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/chrome插件开发/" rel="next" title="chrome插件开发">
+    下一篇：chrome插件开发
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="浏览器兼容问题【转】/" data-title="浏览器兼容问题【转】" data-url="http://zhangshuang.top/浏览器兼容问题【转】/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangshuang'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/1781288684" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/zhangshuangv" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰的网络日志</a>
+                
+                    <a class="social-link" href="http://blog.guijianpan.com/" target="_blank">倚楼听风雨</a>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism的技术博客</a>
+                
+                    <a class="social-link" href="http://www.zhangxinxu.com/wordpress/" target="_blank">鑫生活，鑫空间</a>
+                
+                    <a class="social-link" href="http://www.whycss.com/" target="_blank">前端网址导航whycss</a>
+                
+                    <a class="social-link" href="http://www.chenggang.win" target="_blank">Nice Day</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 zhangshuang.top, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=60653956" charset="UTF-8"></script>
+
+
+
+
+
+</body>
+</html>

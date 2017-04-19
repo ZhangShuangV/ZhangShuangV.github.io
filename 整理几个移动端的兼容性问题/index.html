@@ -1,0 +1,780 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>整理几个移动端的兼容性问题 | 求知若饥，谦虚若愚</title>
+    <meta name="author" content="Zhang Shuang">
+    
+    <meta name="description" content="张爽的个人博客">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="整理几个移动端的兼容性问题"/>
+    <meta property="og:site_name" content="Zhang Shuang&#39;s Blog"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="Zhang Shuang&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">Zhang Shuang&#39;s Blog</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="/img/header.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">张爽</p>
+                        <p class="desc">Web前端/舞蹈</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/前端/">
+                    前端 <span class="right">30 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/插件开发/">
+                    插件开发 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/插件开发/chrome/">
+                    chrome <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/TypeScript/">
+                    TypeScript <span class="right">4 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/JavaScript/">
+                    JavaScript <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/vue/">
+                    vue <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/es6/">
+                    es6 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/H5游戏/">
+                    H5游戏 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Draw/">
+                    Draw <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/echarts/">
+                    echarts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/egret/">
+                    egret <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/highcharts/">
+                    highcharts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/nodejs/">
+                    nodejs <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/用户体验/">
+                    用户体验 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/自动化/">
+                    自动化 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Hybrid/">
+                    Hybrid <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/兼容性/">
+                    兼容性 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/shell/">
+                    shell <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/工具/">
+                    工具 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/前端/">前端</a><a class="breadcrumb" href="/categories/前端/Hybrid/">Hybrid</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>整理几个移动端的兼容性问题</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2016-08-09T16:00:00.000Z"><a href="/整理几个移动端的兼容性问题/">2016-08-10</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/JavaScript/" class="chip pink lighten-1">JavaScript</a>
+        
+            <a href="/tags/Hybrid/" class="chip pink lighten-1">Hybrid</a>
+        
+            <a href="/tags/兼容性/" class="chip pink lighten-1">兼容性</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#还是前几天谈的移动端问题，这次说一下项目中遇到的几个移动端兼容性问题"><span class="section table-of-contents-text">还是前几天谈的移动端问题，这次说一下项目中遇到的几个移动端兼容性问题</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#一-华为荣耀3C的原生浏览器问题："><span class="section table-of-contents-text">一. 华为荣耀3C的原生浏览器问题：</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#二-ios-safari时间显示问题。"><span class="section table-of-contents-text">二. ios safari时间显示问题。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#三-关于长按识别二维码问题。"><span class="section table-of-contents-text">三. 关于长按识别二维码问题。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#四-移动端最小识别rem问题。"><span class="section table-of-contents-text">四. 移动端最小识别rem问题。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#五-点击跳转到新页面会有类似点击穿透效果。"><span class="section table-of-contents-text">五. 点击跳转到新页面会有类似点击穿透效果。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#六-让hybird-app中的webview页面看起来更像native。"><span class="section table-of-contents-text">六. 让hybird app中的webview页面看起来更像native。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#七-移动端300ms延迟。"><span class="section table-of-contents-text">七. 移动端300ms延迟。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#八-移动端-HTML5-audio-autoplay-失效问题"><span class="section table-of-contents-text">八. 移动端 HTML5 audio autoplay 失效问题</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#九-根据屏幕大小加载不同js"><span class="section table-of-contents-text">九. 根据屏幕大小加载不同js</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#十-屏幕旋转的事件和样式"><span class="section table-of-contents-text">十.  屏幕旋转的事件和样式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#十一-background-size问题："><span class="section table-of-contents-text">十一. background-size问题：</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#十二-flex布局问题："><span class="section table-of-contents-text">十二. flex布局问题：</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#十三-input输入框的问题"><span class="section table-of-contents-text">十三. input输入框的问题</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h4 id="还是前几天谈的移动端问题，这次说一下项目中遇到的几个移动端兼容性问题"><a href="#还是前几天谈的移动端问题，这次说一下项目中遇到的几个移动端兼容性问题" class="headerlink" title="还是前几天谈的移动端问题，这次说一下项目中遇到的几个移动端兼容性问题"></a>还是前几天谈的移动端问题，这次说一下项目中遇到的几个移动端兼容性问题</h4><h5 id="一-华为荣耀3C的原生浏览器问题："><a href="#一-华为荣耀3C的原生浏览器问题：" class="headerlink" title="一. 华为荣耀3C的原生浏览器问题："></a>一. 华为荣耀3C的原生浏览器问题：</h5><p>同一行内，存在靠左与靠右的元素时，都必须加上浮动，否则，右浮元素不右浮，影响后续排版。<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;div class=&quot;forcast-title&quot;&gt;</div><div class="line">    &lt;span class=&quot;fl&quot;&gt;上一交易日预报结果&lt;/span&gt;</div><div class="line">    &lt;span class=&quot;fr gray&quot;&gt;2016-03-04&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=&quot;forcast-cnt ofh gray cb&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>两个行内元素span元素都要浮动才行。</p>
+<h5 id="二-ios-safari时间显示问题。"><a href="#二-ios-safari时间显示问题。" class="headerlink" title="二. ios safari时间显示问题。"></a>二. ios safari时间显示问题。</h5><p>之前设置new Date日期格式的时候，在ios中的safari中发现显示效果与其他浏览器不一致，找了多方面原因，结果是把“-”换成“/”就可以解决了。<code>new Date(&quot;year-month-day&quot;);</code>只识别<code>new Date(&quot;year/month/day&quot;);</code></p>
+<h5 id="三-关于长按识别二维码问题。"><a href="#三-关于长按识别二维码问题。" class="headerlink" title="三. 关于长按识别二维码问题。"></a>三. 关于长按识别二维码问题。</h5><p>安卓设备微信中识别没问题，结果到了ios中识别不了。最终发现是将position设置为fixed，ios的微信中长按会不起作用。要想在ios的微信中实现长按识别二维码，只需确保二维码图片和包住图片的div都没有设置<code>position:fiexd</code>即可。</p>
+<h5 id="四-移动端最小识别rem问题。"><a href="#四-移动端最小识别rem问题。" class="headerlink" title="四. 移动端最小识别rem问题。"></a>四. 移动端最小识别rem问题。</h5><p>移动端相对来说兼容性不是什么问题，但是实际项目中发现，如果采用<code>rem: .01rem;</code>有些机型如：魅蓝note、iphone5等机型的webview中显示不出来。华为荣耀有的设置border的时候，有时0.03rem可以，有时不可以，暂时不明所以。所以还是建议，像border这种属性，移动端可以设置为1px。</p>
+<h5 id="五-点击跳转到新页面会有类似点击穿透效果。"><a href="#五-点击跳转到新页面会有类似点击穿透效果。" class="headerlink" title="五. 点击跳转到新页面会有类似点击穿透效果。"></a>五. 点击跳转到新页面会有类似点击穿透效果。</h5><p>部分机型（三星note2、htc one …）在app的webview中出现了点击链接跳转到下一页面后，如果要跳转页面在当前页面的按钮位置有a链接的话，会出现，点击当前页面链接，直接也点击了下一页吗的链接。<br>可能描述的不是很清楚，更形象点说。A页面有个链接a，B页面也有个链接b，并且b的x、y属性含于a的x、y属性。那么会出现点击a链接，直接也点击了b链接。<br>解决办法，直接在另一个页面写了个maskView遮罩层，setTimeout100毫秒解决的。可能有点low，但是当时上线较急，就想到了这个办法。</p>
+<h5 id="六-让hybird-app中的webview页面看起来更像native。"><a href="#六-让hybird-app中的webview页面看起来更像native。" class="headerlink" title="六. 让hybird app中的webview页面看起来更像native。"></a>六. 让hybird app中的webview页面看起来更像native。</h5><p>web相较于native有一个好处就是版本更新比较方便，不会出现native应用商店审核乱七八糟的时间，直接点击app的某个按钮，使用webview打开页面，该页面随意替换都非常方便。最常用的就是活动页面，定期的活动只需要前端开发人员维护即可。但是假如用户长按屏幕的时候出现选中文本的场景，看起来不那么想native，如果有解决这个问题的需求，可使用：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Element &#123;</div><div class="line">    -webkit-user-select: none;</div><div class="line">    -moz-user-select: none;</div><div class="line">    -khtml-user-select: none;</div><div class="line">    user-select: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中Element为任意元素，或者直接将其写入cssReset文件中。</p>
+<h5 id="七-移动端300ms延迟。"><a href="#七-移动端300ms延迟。" class="headerlink" title="七. 移动端300ms延迟。"></a>七. 移动端300ms延迟。</h5><p>300ms尚可接受，不过因为300ms产生的问题，我们必须要解决。300ms导致用户体验并不是很好，解决这个问题，我们一般在移动端用tap事件来取代click事件。<br>推荐两个js，一个是fastclick，一个是tap.js<br>关于300ms延迟，具体<a href="http://thx.github.io/mobile/300ms-click-delay/" target="_blank" rel="external">请看</a></p>
+<h5 id="八-移动端-HTML5-audio-autoplay-失效问题"><a href="#八-移动端-HTML5-audio-autoplay-失效问题" class="headerlink" title="八. 移动端 HTML5 audio autoplay 失效问题"></a>八. 移动端 HTML5 audio autoplay 失效问题</h5><p>这个不是 BUG，由于自动播放网页中的音频或视频，会给用户带来一些困扰或者不必要的流量消耗，所以苹果系统和安卓系统通常都会禁止自动播放和使用 JS 的触发播放，必须由用户来触发才可以播放。<br>解决方法思路：先通过用户 touchstart 触碰，触发播放并暂停（音频开始加载，后面用 JS 再操作就没问题了）。<br>解决代码：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">document.addEventListener(&apos;touchstart&apos;, function () &#123;</div><div class="line">    document.getElementsByTagName(&apos;audio&apos;)[0].play();</div><div class="line">    document.getElementsByTagName(&apos;audio&apos;)[0].pause();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h5 id="九-根据屏幕大小加载不同js"><a href="#九-根据屏幕大小加载不同js" class="headerlink" title="九. 根据屏幕大小加载不同js"></a>九. 根据屏幕大小加载不同js</h5><p>之前话k线用到highcharts的时候，在iphone5上发现显示不是很理想，用过highchars的api设置也没有解决一次设定适应多个屏幕。于是只能用过这种方式来进行多屏幕的适配。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var browserWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;</div><div class="line">    var script = document.createElement(&quot;script&quot;);</div><div class="line">    if(browserWidth &lt;= 380) &#123;</div><div class="line">        script.src = &quot;js/common_small.js&quot;</div><div class="line">    &#125;else&#123;</div><div class="line">        script.src = &quot;js/common.js&quot;</div><div class="line">    &#125;</div><div class="line">    document.head.appendChild(script);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h5 id="十-屏幕旋转的事件和样式"><a href="#十-屏幕旋转的事件和样式" class="headerlink" title="十.  屏幕旋转的事件和样式"></a>十.  屏幕旋转的事件和样式</h5><p>事件名：window.orientation，取值：正负90表示横屏模式，0和180表示竖屏模式。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">window.onorientationchange = function()&#123;</div><div class="line">    switch(window.orientation)&#123;</div><div class="line">        case -90:</div><div class="line">        case 90:</div><div class="line">        alert(&quot;横屏:&quot; + window.orientation);</div><div class="line">        case 0:</div><div class="line">        case 180:</div><div class="line">        alert(&quot;竖屏:&quot; + window.orientation);</div><div class="line">        break;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>有些地方发现屏幕旋转之后，样式适配不完美，所以根据上面的orientation事件，增加了监测到设备屏幕旋转自动刷新的功能：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">function hengshuping()&#123;</div><div class="line">	window.location.reload();</div><div class="line">&#125;</div><div class="line">window.addEventListener(&quot;onorientationchange&quot; in window ? &quot;orientationchange&quot; : &quot;resize&quot;, hengshuping, false);</div></pre></td></tr></table></figure></p>
+<h5 id="十一-background-size问题："><a href="#十一-background-size问题：" class="headerlink" title="十一. background-size问题："></a>十一. background-size问题：</h5><p>华为p8，魅族自带浏览器background-size显示有问题。</p>
+<h5 id="十二-flex布局问题："><a href="#十二-flex布局问题：" class="headerlink" title="十二. flex布局问题："></a>十二. flex布局问题：</h5><p>iphone5s、魅族魅蓝note不支持(具体是自带浏览器还是什么浏览器忘了，有需要的可以自己尝试一下)</p>
+<h5 id="十三-input输入框的问题"><a href="#十三-input输入框的问题" class="headerlink" title="十三. input输入框的问题"></a>十三. input输入框的问题</h5><p>最开始在input输入框中，也会习惯性的写上lineheight（其实可以不写），当使用placeholder的时候自己测试也没有问题。但当测试用魅族mx4自带浏览器测试的时候发现，在input输入框中，输入光标不会上下居中。当时也感觉很奇怪，然而将lineheight删掉就可以了，input中的所有元素就是默认居中的。</p>
+
+                
+<p class="pink-link-context">
+    <a href="/highcharts绘制环形配比图/" rel="next" title="highcharts绘制环形配比图">
+    上一篇：highcharts绘制环形配比图
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/通过Html网页调用本地安卓(android)app程序代码/" rel="next" title="通过Html网页调用本地安卓app程序代码">
+    下一篇：通过Html网页调用本地安卓app程序代码
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="整理几个移动端的兼容性问题/" data-title="整理几个移动端的兼容性问题" data-url="http://zhangshuang.top/整理几个移动端的兼容性问题/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangshuang'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/1781288684" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/zhangshuangv" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰的网络日志</a>
+                
+                    <a class="social-link" href="http://blog.guijianpan.com/" target="_blank">倚楼听风雨</a>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism的技术博客</a>
+                
+                    <a class="social-link" href="http://www.zhangxinxu.com/wordpress/" target="_blank">鑫生活，鑫空间</a>
+                
+                    <a class="social-link" href="http://www.whycss.com/" target="_blank">前端网址导航whycss</a>
+                
+                    <a class="social-link" href="http://www.chenggang.win" target="_blank">Nice Day</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 zhangshuang.top, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=60653956" charset="UTF-8"></script>
+
+
+
+
+
+</body>
+</html>

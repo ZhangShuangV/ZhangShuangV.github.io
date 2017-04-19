@@ -1,0 +1,830 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>nodejs安装及常用快捷键 | 求知若饥，谦虚若愚</title>
+    <meta name="author" content="Zhang Shuang">
+    
+    <meta name="description" content="张爽的个人博客">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="nodejs安装及常用快捷键"/>
+    <meta property="og:site_name" content="Zhang Shuang&#39;s Blog"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="Zhang Shuang&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">Zhang Shuang&#39;s Blog</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="/img/header.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">张爽</p>
+                        <p class="desc">Web前端/舞蹈</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/前端/">
+                    前端 <span class="right">30 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/插件开发/">
+                    插件开发 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/插件开发/chrome/">
+                    chrome <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/TypeScript/">
+                    TypeScript <span class="right">4 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/JavaScript/">
+                    JavaScript <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/vue/">
+                    vue <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/es6/">
+                    es6 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/H5游戏/">
+                    H5游戏 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Draw/">
+                    Draw <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/echarts/">
+                    echarts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/egret/">
+                    egret <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/highcharts/">
+                    highcharts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/nodejs/">
+                    nodejs <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/用户体验/">
+                    用户体验 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/自动化/">
+                    自动化 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Hybrid/">
+                    Hybrid <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/兼容性/">
+                    兼容性 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/shell/">
+                    shell <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/工具/">
+                    工具 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/前端/">前端</a><a class="breadcrumb" href="/categories/前端/nodejs/">nodejs</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>nodejs安装及常用快捷键</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2016-08-22T14:45:38.000Z"><a href="/nodejs安装及常用快捷键/">2016-08-22</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/nodejs/" class="chip pink lighten-1">nodejs</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#安装nvm，nodejs版本管理工具"><span class="section table-of-contents-text">安装nvm，nodejs版本管理工具</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#通过nvm安装nodejs"><span class="section table-of-contents-text">通过nvm安装nodejs</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#npm淘宝镜像-cnpm"><span class="section table-of-contents-text">npm淘宝镜像 cnpm</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#设置别名"><span class="section table-of-contents-text">设置别名</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#pm2-与-nodemon"><span class="section table-of-contents-text">pm2 与 nodemon</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#nodemon，开发环境使用，检测script文件变化，自动重启服务器"><span class="section table-of-contents-text">nodemon，开发环境使用，检测script文件变化，自动重启服务器</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#pm2，生产环境使用，服务器崩溃自动重启"><span class="section table-of-contents-text">pm2，生产环境使用，服务器崩溃自动重启</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#express-web开发框架"><span class="section table-of-contents-text">express web开发框架</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#node"><span class="section table-of-contents-text">node</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h4 id="安装nvm，nodejs版本管理工具"><a href="#安装nvm，nodejs版本管理工具" class="headerlink" title="安装nvm，nodejs版本管理工具"></a>安装nvm，nodejs版本管理工具</h4><p><a href="https://github.com/creationix/nvm" target="_blank" rel="external">参考：https://github.com/creationix/nvm</a><br><a href="http://www.imooc.com/article/14617" target="_blank" rel="external">参考：http://www.imooc.com/article/14617</a><br><a href="https://www.vmvps.com/4-ways-to-install-node-js-on-centos-7-servers.html#nvm" target="_blank" rel="external">参考：centOs中安装nodejs</a></p>
+<ol>
+<li>通过curl安装nvm<br><code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash</code></li>
+<li>设置环境变量<br><code>export NVM_DIR=&quot;$HOME/.nvm&quot;</code></li>
+<li>load nvm<br><code>[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;</code>  <a id="more"></a></li>
+<li>nvm命令行操作<ol>
+<li>查看已经安装的nodejs版本<br><code>nvm list</code> / <code>nvm ls</code></li>
+<li>查看nvm版本<br><code>nvm --version</code>  </li>
+<li>切换版本，仅限下载过的node版本<br><code>nvm use &lt;version&gt;</code>例:<code>nvm use v4.7.0</code>  </li>
+<li>设定默认node版本<br><code>nvm alias default &lt;version&gt;</code>例:<code>nvm alias default v4.7.0</code>  </li>
+</ol>
+</li>
+</ol>
+<p>##</p>
+<h4 id="通过nvm安装nodejs"><a href="#通过nvm安装nodejs" class="headerlink" title="通过nvm安装nodejs"></a>通过nvm安装nodejs</h4><ol>
+<li>安装6.x版本<br><code>nvm install 6</code></li>
+<li>安装4.x版本<br><code>nvm install 4</code>  </li>
+<li>查看node所有版本<br><code>nvm ls-remote</code>  </li>
+<li>安装位置<br><code>~/.nvm/versions/node</code><br><code>/Users/zhangshuang/.nvm/versions/node</code><br>##</li>
+</ol>
+<h4 id="npm淘宝镜像-cnpm"><a href="#npm淘宝镜像-cnpm" class="headerlink" title="npm淘宝镜像 cnpm"></a>npm淘宝镜像 cnpm</h4><ol>
+<li>安装:<br><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>  </li>
+<li><p>使用：<br><code>cnpm install -g &lt;packageName&gt;</code>例:<code>cnpm install -g nodemon</code>  </p>
+</li>
+<li><p>设置：npm配置信息<br><code>npm config list</code>  </p>
+</li>
+<li>设置：npm registry 设置镜像路径<br><code>npm config set registry  &quot;https://registry.npmjs.org/&quot;</code>  </li>
+</ol>
+<h4 id="设置别名"><a href="#设置别名" class="headerlink" title="设置别名"></a>设置别名</h4><p><a href="http://blog.unieagle.net/2012/05/21/linux%E4%B8%8B%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%91%BD%E4%BB%A4alias%EF%BC%8C%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%AB%E5%90%8D%E4%BD%BF%E5%85%B6%E6%B0%B8%E4%B9%85%E7%94%9F%E6%95%88%EF%BC%88%E9%87%8D/" target="_blank" rel="external">alias设置别名</a></p>
+<ol>
+<li>原因：简化命令行提交代码的复杂度  </li>
+<li>方法：<code>vim ~/.bashrc</code>进入该文件  </li>
+<li>新增：<code>alias &lt;name&gt;=&#39;&lt;yourcode&gt;&#39;</code>例:<code>alias myweb=&#39;ssh -p 3000 root@192.169.21.141&#39;</code>  </li>
+<li>生效：<code>source ~/.bashrc</code>  </li>
+<li>使用：<code>myweb</code> + Enter</li>
+<li>如果未生效，创建<code>~/.bash_profile</code>，该文件是用户登录终端时自动执行的文件，一般此文件中会调用.bashrc，在其中写入<code>source ~/.bashrc</code><br>##</li>
+</ol>
+<h4 id="pm2-与-nodemon"><a href="#pm2-与-nodemon" class="headerlink" title="pm2 与 nodemon"></a>pm2 与 nodemon</h4><h5 id="nodemon，开发环境使用，检测script文件变化，自动重启服务器"><a href="#nodemon，开发环境使用，检测script文件变化，自动重启服务器" class="headerlink" title="nodemon，开发环境使用，检测script文件变化，自动重启服务器"></a>nodemon，<em>开发环境使用</em>，检测script文件变化，自动重启服务器</h5><ol>
+<li>安装：<br><code>npm install -g nodemon</code></li>
+<li>运行：<br><code>nodemon &lt;appName&gt;</code>例:<code>nodemon app.js</code>  </li>
+<li>更改默认端口<br><code>nodemon &lt;appName&gt; localhost 8080</code></li>
+</ol>
+<h5 id="pm2，生产环境使用，服务器崩溃自动重启"><a href="#pm2，生产环境使用，服务器崩溃自动重启" class="headerlink" title="pm2，生产环境使用，服务器崩溃自动重启"></a>pm2，<em>生产环境使用</em>，服务器崩溃自动重启</h5><ol>
+<li>安装：<br><code>npm install -g pm2</code>   </li>
+<li>运行<br><code>pm2 start &lt;appName&gt;</code>例:<code>pm2 start server.js</code><br><strong>使用多核心</strong><code>pm2 start &lt;appName&gt; -i max</code></li>
+<li>查看已启动的应用列表<br><code>pm2 list</code>  </li>
+<li>查看应用详情<br><code>pm2 show &lt;appName&gt;</code>例:<code>pm2 show server.js</code></li>
+<li>退出pm2<br><code>pm2 kill</code></li>
+<li>查看控制台输出<br><code>pm2 logs &lt;appName?&gt;</code>输入app名可查看单个输出</li>
+<li>关闭某个进程<br><code>pm2 stop &lt;id&gt;</code>例:<code>pm2 stop 0</code>  </li>
+<li>重启应用<br><code>pm2 restart &lt;appName&gt;</code>例:<code>pm2 restart server.js</code>  </li>
+<li>重载应用<br><code>pm2 reload &lt;appName&gt;</code>例:<code>pm2 reload server.js</code>  </li>
+<li>停止应用<br><code>pm2 stop &lt;appName&gt;</code>例:<code>pm2 stop server.js</code>  </li>
+<li>将应用从pm2中删除<br><code>pm2 delete &lt;appName&gt;</code>例:<code>pm2 delete server.js</code>   </li>
+<li>命名应用<br><code>pm2 start server.js --name game</code>  </li>
+<li>复合运用，命名、最多核心运行<br><code>pm2 start server.js --name game -i max</code><br><code>pm2 start server.js --name localGameServer -i max --watch</code>  </li>
+<li>监控<br><code>pm2 monit</code>  </li>
+</ol>
+<p><a href="http://imweb.io/topic/57c8cbb27f226f687b365636" target="_blank" rel="external">参考：PM2实用入门指南</a><br><a href="https://www.zybuluo.com/zhenxi/note/512949" target="_blank" rel="external">参考：生产环境部署pm2</a>  </p>
+<p>##</p>
+<h4 id="express-web开发框架"><a href="#express-web开发框架" class="headerlink" title="express web开发框架"></a>express web开发框架</h4><ol>
+<li>安装express：<br><code>sudo npm install -g express</code></li>
+<li>安装express命令行工具：<br><code>sudo npm install -g express-generator</code></li>
+<li>启动：<br><code>npm start</code><br>##</li>
+</ol>
+<h4 id="node"><a href="#node" class="headerlink" title="node"></a>node</h4><ol>
+<li>运行进程 <code>node</code>  </li>
+<li>退出进程 <code>process.exit()</code>  </li>
+<li>查看进程pid <code>global.process.pid</code>  </li>
+<li>设置作者  <code>npm config get init-author-name</code>  </li>
+</ol>
+
+                
+<p class="pink-link-context">
+    <a href="/分享几个关于时间的操作/" rel="next" title="分享几个关于时间的操作">
+    上一篇：分享几个关于时间的操作
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/highcharts绘制环形配比图/" rel="next" title="highcharts绘制环形配比图">
+    下一篇：highcharts绘制环形配比图
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="nodejs安装及常用快捷键/" data-title="nodejs安装及常用快捷键" data-url="http://zhangshuang.top/nodejs安装及常用快捷键/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangshuang'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/1781288684" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/zhangshuangv" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰的网络日志</a>
+                
+                    <a class="social-link" href="http://blog.guijianpan.com/" target="_blank">倚楼听风雨</a>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism的技术博客</a>
+                
+                    <a class="social-link" href="http://www.zhangxinxu.com/wordpress/" target="_blank">鑫生活，鑫空间</a>
+                
+                    <a class="social-link" href="http://www.whycss.com/" target="_blank">前端网址导航whycss</a>
+                
+                    <a class="social-link" href="http://www.chenggang.win" target="_blank">Nice Day</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 zhangshuang.top, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=60653956" charset="UTF-8"></script>
+
+
+
+
+
+</body>
+</html>

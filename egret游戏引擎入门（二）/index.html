@@ -1,0 +1,776 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>egret游戏引擎入门（二） | 求知若饥，谦虚若愚</title>
+    <meta name="author" content="Zhang Shuang">
+    
+    <meta name="description" content="张爽的个人博客">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="egret游戏引擎入门（二）"/>
+    <meta property="og:site_name" content="Zhang Shuang&#39;s Blog"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="Zhang Shuang&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">Zhang Shuang&#39;s Blog</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="/img/header.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">张爽</p>
+                        <p class="desc">Web前端/舞蹈</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/前端/">
+                    前端 <span class="right">30 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/插件开发/">
+                    插件开发 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/插件开发/chrome/">
+                    chrome <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/TypeScript/">
+                    TypeScript <span class="right">4 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/JavaScript/">
+                    JavaScript <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/vue/">
+                    vue <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/es6/">
+                    es6 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/H5游戏/">
+                    H5游戏 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Draw/">
+                    Draw <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/echarts/">
+                    echarts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/egret/">
+                    egret <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/highcharts/">
+                    highcharts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/nodejs/">
+                    nodejs <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/用户体验/">
+                    用户体验 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/自动化/">
+                    自动化 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Hybrid/">
+                    Hybrid <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/兼容性/">
+                    兼容性 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/shell/">
+                    shell <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/工具/">
+                    工具 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/前端/">前端</a><a class="breadcrumb" href="/categories/前端/H5游戏/">H5游戏</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>egret游戏引擎入门（二）</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2016-11-13T13:45:50.000Z"><a href="/egret游戏引擎入门（二）/">2016-11-13</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/egret/" class="chip pink lighten-1">egret</a>
+        
+            <a href="/tags/h5游戏/" class="chip pink lighten-1">h5游戏</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#游戏入口基类：BaseMain"><span class="section table-of-contents-text">游戏入口基类：BaseMain</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-6"><a class="section table-of-contents-link" href="#资源加载RES"><span class="section table-of-contents-text">资源加载RES</span></a></li><li class="section table-of-contents-item section table-of-contents-level-6"><a class="section table-of-contents-link" href="#其他方法"><span class="section table-of-contents-text">其他方法</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#入口类：Main"><span class="section table-of-contents-text">入口类：Main</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>今天分享一下游戏入口类的编写。<br>首先游戏中默认的入口为Main.ts，但是因为是游戏入口，我只想在这里看到游戏加载后进入哪个页面，不想看见乱七八糟的游戏加载等事件。所以在这里将游戏入口拆分成两个部分，一个是入口的基类BaseMain，一个是入口类Main。这个地方是借鉴的别人的思想。</p>
+<h2 id="游戏入口基类：BaseMain"><a href="#游戏入口基类：BaseMain" class="headerlink" title="游戏入口基类：BaseMain"></a>游戏入口基类：BaseMain</h2><a id="more"></a>
+<p>先说一下基类吧，对于像我这样的不是计算机专业的，也没学过java这种语言的人来说，可能不知道什么是基类。百度的解释是：通过继承机制，可以利用已有的数据类型来定义新的数据类型。在本游戏中，游戏入口基类最要承担游戏资源的加载、egret自带的素材解析、egret自带的主题解析、以及加载完资源后的操作。</p>
+<h6 id="资源加载RES"><a href="#资源加载RES" class="headerlink" title="资源加载RES"></a>资源加载RES</h6><p>游戏资源加载的作用是在游戏开始时预加载资源<br>其实egret自动生成的demo对这方面的解释也比较清晰，从每一个方法名来看就可以看出，这个方法的作用。<br>RES.ResourceEvent.CONFIG_COMPLETE是资源配置文件加载完成；<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this);</div></pre></td></tr></table></figure></p>
+<p>RES.ResourceEvent.GROUP_COMPLETE是资源组加载完成，之前调研的createjs也有类似的资源组。这里需要判断加载完什么资源之后要执行的方法。比如我在这里就有当loading资源组加载完成后，加载preload资源组，并且显示loading页面。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);</div></pre></td></tr></table></figure></p>
+<p>RES.ResourceEvent.GROUP_PROGRESS是资源组加载中，这里一般会做一个判断，如果不是loading资源组，就显示loading页面，并且显示所有游戏资源的加载情况（进度条）；<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this);</div></pre></td></tr></table></figure></p>
+<p>RES.ResourceEvent.GROUP_LOAD_ERROR是资源组加载出错；<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR,this.onResourceLoadError,this);</div></pre></td></tr></table></figure></p>
+<p>RES.ResourceEvent.ITEM_LOAD_ERROR是某个资源加载出错。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR,this.onItemLoadError,this);</div></pre></td></tr></table></figure></p>
+<p>RES.loadGroup(groupname)是开始加载某个资源组。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">RES.loadGroup(&quot;loading&quot;);</div></pre></td></tr></table></figure></p>
+<p>这里的private是这个类的私有属性方法，外部无法调用。就像<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">function _alert()&#123;</div><div class="line">    alert(1);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>因为js中没有私有、公共这个概念，有时候就会使用” _ “来约定，该属性或方法是私有的，外部不要调用。有addEventListener就有removeEventListener，也就是移除事件监听。因为游戏对性能要求比较高，不用了的监听需要及时移除，省的监听多了造成游戏卡顿。<br>之前也看到过单独编写资源加载类的，但是自己看了下，没有采用。</p>
+<h6 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h6><p>如打开socket连接、发送第一条请求数据、注入egret定义的素材解析器、添加游戏图层（GameLayerManager）等都会在游戏的基类中编写。<br>最终贴一下BaseMain的代码吧，因为也是从头开始接触这个，所以注释什么的写的也比较全面。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">namespace base &#123;</div><div class="line"></div><div class="line">    export class BaseMain extends eui.UILayer &#123;</div><div class="line">        private loadingView: LoadingView; //加载页面</div><div class="line"></div><div class="line">        public constructor() &#123;</div><div class="line">            super();</div><div class="line">            this.addEventListener(egret.Event.ADDED_TO_STAGE, this._onAddToStage, this);</div><div class="line">        &#125;</div><div class="line">        private _onAddToStage() &#123;</div><div class="line">            SocketManager.getInstance().connection(); //开始websocket连接</div><div class="line"></div><div class="line">            this.stage.registerImplementation(&apos;eui.IAssetAdapter&apos;,new AssetAdapter()); //注入自定义的素材解析器</div><div class="line">            var theme = new eui.Theme(&apos;resource/default.thm.json&apos;, this.stage);</div><div class="line"></div><div class="line">            this.addChild(GameLayerManager.gameLayer()); //添加游戏图层</div><div class="line"></div><div class="line">            RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this); //加载资源配置文件</div><div class="line">            RES.loadConfig(&apos;resource/default.res.json&apos;, &apos;resource/&apos;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        private onConfigComplete(event: RES.ResourceEvent): void &#123;</div><div class="line">            RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this); //移除监听事件            </div><div class="line">            //代表什么时候加载资源,完成、预加载等</div><div class="line">            RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this); //加载完成            </div><div class="line">            RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this); //加载进行中</div><div class="line">            RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR,this.onResourceLoadError,this); //加载组错误</div><div class="line">            RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR,this.onItemLoadError,this); //加载单个文件错误</div><div class="line">            RES.loadGroup(&quot;loading&quot;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        private onResourceProgress(event: RES.ResourceEvent): void &#123;</div><div class="line">            if(event.groupName != &apos;loading&apos;) &#123; //如果不是加载loading页面则显示进度条</div><div class="line">                this.loadingView.createLoadingBar(event.itemsLoaded, event.itemsTotal);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        private onResourceLoadError(event: RES.ResourceEvent): void &#123;</div><div class="line">            console.error(&apos;资源[&apos; + event.groupName + &apos;]:加载失败&apos;);</div><div class="line">            this.onResourceLoadComplete(event);            </div><div class="line">        &#125;</div><div class="line"></div><div class="line">        private onItemLoadError(event: RES.ResourceEvent): void &#123;</div><div class="line">            console.error(&apos;Url:&apos; + event.resItem.url + &apos;加载失败&apos;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        private onResourceLoadComplete(event: RES.ResourceEvent): void &#123;</div><div class="line">            console.warn(&apos;资源[&apos; + event.groupName + &apos;]:加载完成&apos;);</div><div class="line">            this.addChild(ViewManager.getInstance()); //添加场景切换控制</div><div class="line"></div><div class="line">            if(event.groupName == &apos;loading&apos;) &#123; //如果加载完成的是loading资源组</div><div class="line">                this.loadingView = new LoadingView();</div><div class="line">                GameLayerManager.gameLayer().loadLayer.addChild(this.loadingView);</div><div class="line">                RES.loadGroup(&apos;preload&apos;);</div><div class="line">            &#125;else if(event.groupName == &apos;preload&apos;) &#123; //如果加载完成的是preload资源组</div><div class="line">                SoundManager.getInstance(); //预先加载声音，放到声音预加载之后再执行</div><div class="line">                if(GamePlayer.playerInfo.isNew) &#123; //判断是否是新用户</div><div class="line">                    RES.loadGroup(&apos;guide&apos;);</div><div class="line">                &#125;else &#123;</div><div class="line">                    let timer = setInterval(() =&gt; &#123;</div><div class="line">                        if(SocketManager.getInstance().isConnection) &#123;</div><div class="line">                            clearInterval(timer);</div><div class="line">                            this.start();</div><div class="line">                            GameLayerManager.gameLayer().loadLayer.removeChild(this.loadingView);                            </div><div class="line">                        &#125;                 </div><div class="line">                    &#125;,100)</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125;else if(event.groupName == &apos;guide&apos;) &#123; //如果是新用户 加载guide资源组</div><div class="line">                if(SocketManager.getInstance().isConnection &amp;&amp; GamePlayer.playerInfo.isNew) &#123;</div><div class="line">                    this.firstStart();</div><div class="line">                    GameLayerManager.gameLayer().loadLayer.removeChild(this.loadingView);</div><div class="line">                &#125;else if(SocketManager.getInstance().isConnection) &#123;</div><div class="line">                    GameLayerManager.gameLayer().loadLayer.removeChild(this.loadingView);                    </div><div class="line">                    this.start();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            let timer = setInterval(() =&gt; &#123;</div><div class="line">                if(SocketManager.getInstance().isConnection) &#123;</div><div class="line">                    clearInterval(timer);</div><div class="line">                    SocketManager.getInstance().sendData(GlobalData.Cmd.gameEnter);</div><div class="line">                &#125;</div><div class="line">            &#125;,100);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        public start(): void &#123;&#125; //走main.ts</div><div class="line">        public firstStart(): void &#123;&#125; //走main.ts</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    class AssetAdapter implements eui.IAssetAdapter &#123;</div><div class="line">        /**</div><div class="line">         * 解析素材</div><div class="line">         * @param source 待解析的新素材标识符</div><div class="line">         * @param compFunc 解析完成回调函数，示例：callBack(content:any,source:string):void;</div><div class="line">         * @param thisObject callBack的 this 引用</div><div class="line">         */</div><div class="line">        public getAsset(source: string, compFunc:Function, thisObject: any): void &#123;</div><div class="line">            function onGetRes(data: any): void &#123;</div><div class="line">                compFunc.call(thisObject, data, source);</div><div class="line">            &#125;</div><div class="line">            if (RES.hasRes(source)) &#123;</div><div class="line">                let data = RES.getRes(source);</div><div class="line">                if (data) &#123;</div><div class="line">                    onGetRes(data);</div><div class="line">                &#125;</div><div class="line">                else &#123;</div><div class="line">                    RES.getResAsync(source, onGetRes, this);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            else &#123;</div><div class="line">                RES.getResByUrl(source, onGetRes, this, RES.ResourceItem.TYPE_IMAGE);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    class ThemeAdapter implements eui.IThemeAdapter &#123;</div><div class="line">        /**</div><div class="line">         * 解析主题</div><div class="line">         * @param url 待解析的主题url</div><div class="line">         * @param compFunc 解析完成回调函数，示例：compFunc(e:egret.Event):void;</div><div class="line">         * @param errorFunc 解析失败回调函数，示例：errorFunc():void;</div><div class="line">         * @param thisObject 回调的this引用</div><div class="line">         */</div><div class="line">        public getTheme(url:string,compFunc:Function,errorFunc:Function,thisObject:any):void &#123;</div><div class="line">            function onGetRes(e:string):void &#123;</div><div class="line">                compFunc.call(thisObject, e);</div><div class="line">            &#125;</div><div class="line">            function onError(e:RES.ResourceEvent):void &#123;</div><div class="line">                if(e.resItem.url == url) &#123;</div><div class="line">                    RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, onError, null);</div><div class="line">                    errorFunc.call(thisObject);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, onError, null);</div><div class="line">            RES.getResByUrl(url, onGetRes, this, RES.ResourceItem.TYPE_TEXT);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="入口类：Main"><a href="#入口类：Main" class="headerlink" title="入口类：Main"></a>入口类：Main</h2><p>游戏入口类继承自BaseMain。<br>刚刚的游戏入口类中，在preload资源组以及guide资源组加载完成之后，分别调用start跟firstStart方法。但是在基类中，这两个方法没有方法体。那么如何调用呢？<br>在入口类Main中，有两个公共方法，一个是start方法，一个是firstStart方法。因为这个类是继承自BaseMain的，所以在游戏一开始运行时会先执行基类的方法，等到资源加载完成要调用相应的start跟firstStart方法时，就会先调用当前入口类Main中的方法。如果Main中没有该方法，就会执行基类也就是BaseMain中的方法。<br>这个没有什么好说的，直接贴一下代码：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Main extends base.BaseMain &#123;</div><div class="line"></div><div class="line">    public constructor() &#123;</div><div class="line">        super();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public firstStart(): void &#123; //新玩家</div><div class="line">        var changeEvent = new ChangeSceneEvent(ChangeSceneEvent.CHANGE_SCENE_EVENT);</div><div class="line">        changeEvent.eventType = FirstGuideView.FIRST_GUIDE_VIEW;</div><div class="line">        changeEvent.obj = this;</div><div class="line">        ViewManager.getInstance().dispatchEvent(changeEvent);</div><div class="line">        SoundManager.getInstance().playSoundBg(); //播放背景音乐</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public start(): void &#123; //老玩家</div><div class="line">        var changeEvent = new ChangeSceneEvent(ChangeSceneEvent.CHANGE_SCENE_EVENT);</div><div class="line">        changeEvent.eventType = GameMainView.GAME_MAIN_VIEW;</div><div class="line">        changeEvent.obj = this;</div><div class="line">        ViewManager.getInstance().dispatchEvent(changeEvent);</div><div class="line">        SoundManager.getInstance().playSoundBg(); //播放背景音乐</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private end(): void &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>下次会分享一下关于声音控制的方法。</p>
+
+                
+<p class="pink-link-context">
+    <a href="/egret游戏引擎入门（三）/" rel="next" title="egret游戏引擎入门（三）">
+    上一篇：egret游戏引擎入门（三）
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/egret游戏引擎入门（一）/" rel="next" title="egret游戏引擎入门（一）">
+    下一篇：egret游戏引擎入门（一）
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="egret游戏引擎入门（二）/" data-title="egret游戏引擎入门（二）" data-url="http://zhangshuang.top/egret游戏引擎入门（二）/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangshuang'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/1781288684" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/zhangshuangv" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰的网络日志</a>
+                
+                    <a class="social-link" href="http://blog.guijianpan.com/" target="_blank">倚楼听风雨</a>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism的技术博客</a>
+                
+                    <a class="social-link" href="http://www.zhangxinxu.com/wordpress/" target="_blank">鑫生活，鑫空间</a>
+                
+                    <a class="social-link" href="http://www.whycss.com/" target="_blank">前端网址导航whycss</a>
+                
+                    <a class="social-link" href="http://www.chenggang.win" target="_blank">Nice Day</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 zhangshuang.top, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=60653956" charset="UTF-8"></script>
+
+
+
+
+
+</body>
+</html>

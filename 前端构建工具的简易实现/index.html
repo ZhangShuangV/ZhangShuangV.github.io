@@ -1,0 +1,815 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>前端构建工具的简易实现 | 求知若饥，谦虚若愚</title>
+    <meta name="author" content="Zhang Shuang">
+    
+    <meta name="description" content="张爽的个人博客">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="前端构建工具的简易实现"/>
+    <meta property="og:site_name" content="Zhang Shuang&#39;s Blog"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="Zhang Shuang&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">Zhang Shuang&#39;s Blog</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="/img/header.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">张爽</p>
+                        <p class="desc">Web前端/舞蹈</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/前端/">
+                    前端 <span class="right">30 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/插件开发/">
+                    插件开发 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/插件开发/chrome/">
+                    chrome <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/TypeScript/">
+                    TypeScript <span class="right">4 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/JavaScript/">
+                    JavaScript <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/vue/">
+                    vue <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/es6/">
+                    es6 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/H5游戏/">
+                    H5游戏 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Draw/">
+                    Draw <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/echarts/">
+                    echarts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/egret/">
+                    egret <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/highcharts/">
+                    highcharts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/nodejs/">
+                    nodejs <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/用户体验/">
+                    用户体验 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/自动化/">
+                    自动化 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Hybrid/">
+                    Hybrid <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/兼容性/">
+                    兼容性 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/shell/">
+                    shell <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/工具/">
+                    工具 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/前端/">前端</a><a class="breadcrumb" href="/categories/前端/自动化/">自动化</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>前端构建工具的简易实现</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2017-04-17T00:55:08.000Z"><a href="/前端构建工具的简易实现/">2017-04-17</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/自动化/" class="chip pink lighten-1">自动化</a>
+        
+            <a href="/tags/构建工具/" class="chip pink lighten-1">构建工具</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#功能"><span class="section table-of-contents-text">功能</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#开发环境"><span class="section table-of-contents-text">开发环境</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#生产环境"><span class="section table-of-contents-text">生产环境</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#用到的模块："><span class="section table-of-contents-text">用到的模块：</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#开发"><span class="section table-of-contents-text">开发</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#config"><span class="section table-of-contents-text">config</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#开发环境-1"><span class="section table-of-contents-text">开发环境</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#生产环境-1"><span class="section table-of-contents-text">生产环境</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#cli"><span class="section table-of-contents-text">cli</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#zst-web"><span class="section table-of-contents-text">zst-web</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#终"><span class="section table-of-contents-text">终</span></a></li></ol></li></ol></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>虽然说之前用过gulp、webpack这种前端构建工具，但是自己也只是单纯的使用，从来没想过这些东西到底是怎样实现的。最近看了一节公开课，觉得很受启发，现在就说一下我的这个前端构建工具是如何实现的。</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><h4 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h4><p><code>zst dev</code> 实现保存代码自动刷新的功能。</p>
+<h4 id="生产环境"><a href="#生产环境" class="headerlink" title="生产环境"></a>生产环境</h4><p><code>zst dist</code> 这个实现的功能较多：  </p>
+<ol>
+<li>自动生成dist目录</li>
+<li>合并压缩js、css添加时间戳输出到dist目录</li>
+<li>将favicon.ico文件复制到dist目录</li>
+<li>处理index.html文件，删除注释</li>
+<li>如果开发的是移动端页面，还会在index.html中插入移动端meta及处理rem的代码</li>
+</ol>
+<a id="more"></a>
+<h4 id="用到的模块："><a href="#用到的模块：" class="headerlink" title="用到的模块："></a>用到的模块：</h4><p>express、watch、command、fs、path、uglifyjs、uglifycss、cheerio、open、package、http、socket.io  </p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h4 id="config"><a href="#config" class="headerlink" title="config"></a>config</h4><p>我们需要一个config对象来作为项目的配置<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">const config = &#123;</div><div class="line">    server: &#123;</div><div class="line">        ip: &quot;http://localhost&quot;,</div><div class="line">        port: 3000</div><div class="line">    &#125;,</div><div class="line">    input: &quot;./src&quot;,</div><div class="line">    output: &quot;./dist&quot;,</div><div class="line">    info: &quot;INFO  &quot;,</div><div class="line">    isPhone: true, //是否是手机</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><code>server</code>字段设置的是服务的ip跟端口，<code>input</code>字段是输入路径，<code>output</code>字段是输出路径，<code>info</code>字段是打印log的日志头，<code>isPhone</code>字段是是否是移动端。</p>
+<h4 id="开发环境-1"><a href="#开发环境-1" class="headerlink" title="开发环境"></a>开发环境</h4><ol>
+<li>首先，我们需要创建一个http服务在3000端口，这里我们使用express这个框架来实现。  <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var app = require(&apos;express&apos;);</div><div class="line">var server = require(&apos;http&apos;).createServer(app);</div><div class="line">server.listen(config.server.port, function (req, res) &#123;</div><div class="line">    log(&apos;server start at &apos;+config.server.ip+&quot;:&quot;+config.server.port);</div><div class="line">&#125;);</div><div class="line">app.get(&apos;/&apos;, function (req, res) &#123;</div><div class="line">    res.send(getHtml(config.isPhone,config.input));</div><div class="line">&#125;);</div><div class="line"></div><div class="line">function getHtml(isPhone,path) &#123;</div><div class="line">    var path = path || &apos;./src&apos;;</div><div class="line">    var devHtml = fs.readFileSync(path +&apos;/index.html&apos;, &apos;utf-8&apos;) + fs.readFileSync(&apos;./socket.xml&apos;);</div><div class="line">    if(isPhone) return fs.readFileSync(&apos;./isphone.xml&apos;) + devHtml;</div><div class="line">    else return devHtml;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在这段代码中，server.listen是在config.server.port端口开启一个服务器，cb会在服务开启后执行。<br>app.get()是express的路由，当客户端访问到<code>/</code>时，返回给客户端什么内容。<br>getHtml方法最终返回的是加上处理自动刷新代码的index.html。<br>如果要开启服务器后自动打开客户端，可以使用open插件:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var open = require(&apos;open&apos;); //自动打开浏览器</div><div class="line">server.listen(config.server.port, function (req, res) &#123;</div><div class="line">    log(&apos;server start at &apos;+config.server.ip+&quot;:&quot;+config.server.port);</div><div class="line">    open(config.server.ip+&quot;:&quot;+config.server.port);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<ol>
+<li>使用socket.io及watch<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var io = require(&apos;socket.io&apos;).listen(server);</div><div class="line">io.sockets.on(&apos;connection&apos;, function (socket) &#123;</div><div class="line">    watch.watchTree(config.input, function (f, curr, prev) &#123;</div><div class="line">        if (typeof f == &quot;object&quot; &amp;&amp; prev === null &amp;&amp; curr === null) &#123;</div><div class="line">            // Finished walking the tree</div><div class="line">        &#125; else &#123; // f was changed</div><div class="line">            socket.emit(&apos;file-change&apos;);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    log(&apos;client connected&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>socket.io是websocket长链接通信的封装，之前在egret游戏中使用了websocket通信，但是没有使用socket.io。<br>这个就是当socket连接后，执行的操作，也就是使用watch插件进行文件的监控。使用方式都有注释，也可以从github上进行搜索。最后一个else中，<code>socket.emit</code>是自定义的事件名，文件改变。<br>在js中写了这个还需要在html中接收<code>file-change</code>事件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/* socket.xml */</div><div class="line">&lt;script src=&quot;/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var socket = io.connect(&apos;ws://localhost:3000&apos;);</div><div class="line">    socket.on(&apos;file-change&apos;, function (data) &#123;</div><div class="line">        location.reload();</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>上面这段代码是单独放到一个xml文件中的，在上面的<code>getHtml</code>方法中，如果是开发模式的话，会在index.html中自动添加上这段代码。<br>如果要在手机中看的话，需要将<code>socket</code>变量改成本机的ip，mac电脑使用<code>ifconfig</code>查看，windows电脑使用<code>ipconfig</code>查看。<br>这里<code>socket.on</code>监听到<code>file-change</code>事件之后就刷新页面。</p>
+<h4 id="生产环境-1"><a href="#生产环境-1" class="headerlink" title="生产环境"></a>生产环境</h4><p>生产环境的功能较多</p>
+<ol>
+<li>处理css<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var uglifyCss = require(&apos;uglifycss&apos;); //合并压缩css</div><div class="line">var fs = require(&apos;fs&apos;); //nodejs文件处理模块</div><div class="line"></div><div class="line">function handleCss() &#123; //处理css</div><div class="line">    let uglifiedCss = uglifyCss.processFiles(getCssArr(), &#123; maxLineLen: 500, expandVars: true&#125;); // 合并压缩css</div><div class="line">    var cssName = &quot;./bundle.&quot; + new Date().getTime() + &quot;.css&quot;; //添加时间戳</div><div class="line">    fs.writeFileSync(config.output+&apos;/&apos;+cssName.slice(1), uglifiedCss); //将合并的css文件写入bundle.css</div><div class="line">    log(&apos;Create bundle.css succeed&apos;);</div><div class="line">    $(&apos;head&apos;).append(&apos;&lt;link href=&quot;&apos;+cssName+&apos;&quot; rel=&quot;stylesheet&quot;/&gt;&apos;); //在html中添加打包好的css、js文件</div><div class="line">&#125;</div><div class="line"></div><div class="line">function getCssArr() &#123; //获取css的href属性列表</div><div class="line">    let cssArr = [];</div><div class="line">    let link = $(&apos;link&apos;);</div><div class="line">    let ico = $(&apos;link&apos;)[$(&apos;link&apos;).length - 1]; //找到favicon.ico的link标签</div><div class="line">    // let ico = $(&apos;link&apos;).pop();</div><div class="line">    ico.attribs.href = &apos;./favicon.ico&apos;;</div><div class="line">    for(let i = 0, len = link.length - 1; i &lt; len; i++) &#123; //length-1是因为有favicon</div><div class="line">        cssArr.push(config.input+link[i].attribs.href.slice(1));</div><div class="line">    &#125;</div><div class="line">    link.remove(); //删除原来的link标签</div><div class="line">    $(&apos;head&apos;).append(ico); //添加ico标签</div><div class="line">    return cssArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这里用到了nodejs的filesystem跟uglifiycss插件。<br>这里需要先引入uglifycss，其中第一个参数是一个数组对象，存放的是所有要压缩合并的css文件。这个数组可以通过<code>getCssArr</code>方法得到。<br>nodejs的fs系统有个<code>writeFileSync</code>接受输出路径跟输出内容，会在指定路径生成文件，这里就配合<code>new Date().getTime()</code>输出了带有时间戳的css文件。<br>在<code>getCssArr</code>方法中，因为我在index.html文件中写上了favicon.ico，所以这里需要将最后一个<code>link</code>标签也就是存放favicon.ico的标签单独处理。</p>
+<ol>
+<li><p>处理js<br>处理js跟处理css几乎是一模一样。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">function handleJs() &#123; //处理js</div><div class="line">    let uglifiedJs = uglifyJS.minify(getJsArr(), &#123; //合并压缩js</div><div class="line">        compress: &#123;</div><div class="line">            dead_code: true,</div><div class="line">            global_defs: &#123;</div><div class="line">                DEBUG: false</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    var jsName = &quot;./bundle.&quot; + new Date().getTime() + &quot;.js&quot;;</div><div class="line">    fs.writeFileSync(config.output+&apos;/&apos;+jsName.slice(1), uglifiedJs.code);</div><div class="line">    log(&apos;Create bundle.js succeed&apos;);</div><div class="line">    $(&apos;body&apos;).append(&apos;&lt;script src=&quot;&apos;+jsName+&apos;&quot; /&gt;&lt;/script&gt;&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function getJsArr() &#123; //获取js的src属性列表</div><div class="line">    let scriptArr = [];</div><div class="line">    let script = $(&apos;script&apos;);</div><div class="line">    for(let i = 0, len = script.length - 2; i &lt; len; i++) &#123; //length-2是因为会在html最后增添socket.xml中的script标签</div><div class="line">        if(script[i].attribs.src) scriptArr.push(config.input+&quot;/&quot; + script[i].attribs.src); //如果有这个属性就添加到scriptArr中，之后会进行合并压缩</div><div class="line">    &#125;</div><div class="line">    script.remove(); //删除原来的script标签</div><div class="line">    return scriptArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>复制icon</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">function handleIcon() &#123; //处理favicon.ico</div><div class="line">    let inputPath = config.input + &apos;/img/favicon.ico&apos;;</div><div class="line">    let outputPath = config.output + &apos;/favicon.ico&apos;;</div><div class="line">    let readStream = fs.createReadStream(inputPath);</div><div class="line">    let writeStream = fs.createWriteStream(outputPath);</div><div class="line">    readStream.pipe(writeStream);</div><div class="line">    log(&apos;Create favicon.ico succeed&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这里用到的fs系统的读写文件流。</p>
+<ol>
+<li>处理目录<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">function handleDir() &#123; //删除原有目录，生成新目录</div><div class="line">    let dirpath = config.output;</div><div class="line">    if(fs.existsSync(dirpath)) &#123; //监测目录是否存在</div><div class="line">        delDir(dirpath); //存在就递归删除目录</div><div class="line">        end = new Date().getMilliseconds();</div><div class="line">        log(&apos;Delete &apos;+dirpath.slice(2)+&apos; dir succeed&apos;);</div><div class="line">        fs.mkdirSync(dirpath); //生成目录</div><div class="line">        end = new Date().getMilliseconds();</div><div class="line">        log(&apos;Create &apos;+dirpath.slice(2) + &apos; dir succeed&apos;);</div><div class="line">    &#125;else &#123;</div><div class="line">        fs.mkdirSync(dirpath); //生成目录</div><div class="line">        end = new Date().getMilliseconds();</div><div class="line">        log(&apos;Create &apos;+dirpath.slice(2) + &apos; dir succeed&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function delDir(path) &#123; //递归删除生产环境输出目录</div><div class="line">    var files = [];</div><div class="line">    files = fs.readdirSync(path);</div><div class="line">    files.forEach(function (file, index) &#123;</div><div class="line">        var curPath = path + &apos;/&apos; + file;</div><div class="line">        if(fs.statSync(curPath).isDirectory()) &#123;</div><div class="line">            delDir(curPath);</div><div class="line">        &#125;else &#123;</div><div class="line">            fs.unlinkSync(curPath);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    fs.rmdirSync(path);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这个目录如果是不删除的话，每次使用<code>zst dist</code>命令都会重新生成带事件戳的css文件、js文件，会导致文件过的问题。所以最好是在生成文件前先删除目录，再添加目录，然后在将处理好的css、js文件等放入目录。<br>因为使用nodejs删除文件夹的话，如果文件夹内容不为空，没有办法删除，所以这里需要使用递归来删除文件夹。</p>
+<ol>
+<li>处理index.html<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">function handleHtml() &#123; //处理html</div><div class="line">    let regex = /&lt;!--[\s\S]*?--&gt;/g; //删除html中的注释</div><div class="line">    let html = $.html().replace(regex, &apos;&apos;);</div><div class="line"></div><div class="line">    regex = /\s&#123;10,&#125;/g; //删除多余的空行</div><div class="line">    html = html.replace(regex, &apos;&apos;);</div><div class="line"></div><div class="line">    $(&apos;html&apos;).html(html); //重新赋值html文件</div><div class="line">    log(&apos;Create index.html succeed&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>通过使用正则来删除index.html中的注释跟多余的空行。</p>
+<h4 id="cli"><a href="#cli" class="headerlink" title="cli"></a>cli</h4><p>我们肯定是希望插件是一个命令行插件，这样就可以通过执行上面说的两个命令<code>zst dev</code>跟<code>zst dist</code>在进行开发环境跟生产环境的不同处理。<br>这里我们需要使用nodejs不内置的command模块。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#! /usr/bin/env node</div><div class="line">var command = require(&apos;commander&apos;); //nodejs命令模块</div><div class="line"></div><div class="line">command.version(package.version); //版本号</div><div class="line">command.command(&apos;dev&apos;).action(function () &#123; develop(); &#125;);</div><div class="line">command.command(&apos;dist&apos;).action(function () &#123; bundle(); &#125;);</div><div class="line">command.parse(process.argv); //开始解析用户输入的命令，这个不能跟上面的命令放到同一行</div></pre></td></tr></table></figure></p>
+<p>第一句的<code>#! /usr/bin/env node</code>是使用nodejs来执行这段脚本。<br>我们需要在package.json中添加一个字段：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&quot;bin&quot;: &#123;</div><div class="line">  &quot;zst&quot;: &quot;./zst.config.js&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果是在本地使用的话，运行<code>npm link</code>就可以将其打包为命令行工具。<br>如果要发布到npm上的话：<br>首先：在命令行中输入<code>npm login</code>登录自己的npm账户(如果没有请到<a href="https://www.npmjs.com自行注册。" target="_blank" rel="external">https://www.npmjs.com自行注册。</a>)<br>然后：输入<code>npm publish</code>就可以将自己写的插件作为一个npm包上传到npm服务器中。<code>npm install zst -g</code>下载下来就可以了。  </p>
+<p>到了这一步，我们通过上面的命令下载下来可以发现，这个没法生成项目目录，而是存在在本机的node环境中可以使用。所以我们还需要给这个构建工具加一个壳子。</p>
+<h4 id="zst-web"><a href="#zst-web" class="headerlink" title="zst-web"></a>zst-web</h4><p>我们需要像<code>vue-cli</code>那样，运行命令直接生成项目模板，这就需要我们在这个zst外面加上一个壳子。<br>使用npm init 新建一个项目，这个需要依赖commander、bluebird还有fs-extra模块。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/* generateStructure.js */</div><div class="line">var Promise = require(&quot;bluebird&quot;),</div><div class="line">    fs = Promise.promisifyAll(require(&apos;fs-extra&apos;));</div><div class="line"></div><div class="line">var root = __dirname.replace(/zst-web\/lib/,&apos;zst-web/&apos;);</div><div class="line"></div><div class="line">function generateStructure(project)&#123;</div><div class="line">    return fs.copySync(root + &apos;structure&apos;, project,&#123;clobber: true&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">module.exports = generateStructure;</div></pre></td></tr></table></figure></p>
+<p>通过bluebird跟fs-extra我们就可以实现将一个目录复制到另一个目录。这里的<code>root</code>是为了防止找不到复制源头的bug。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/* zst.js */</div><div class="line">var command = require(&apos;commander&apos;);</div><div class="line">var gs = require(&apos;../lib/generaterStructure&apos;);</div><div class="line"></div><div class="line">command</div><div class="line">    .version(require(&apos;../package.json&apos;).version)</div><div class="line">    .usage(&apos;[options] [project name]&apos;)</div><div class="line">    .parse(process.argv);</div><div class="line"></div><div class="line">var dir = command.args[0];</div><div class="line">if(!dir) command.help();</div><div class="line"></div><div class="line">gs(dir);</div></pre></td></tr></table></figure>
+<p>这个地方的<code>dir</code>就是通过commander模块来截取commander管道中传入的参数，就类似于我们经常使用的<code>gulp server</code>后面的<code>server</code>。这样我们就能实现输入命令<code>zst-web [project name]</code>创建之前的zst中的所有内容。</p>
+<h4 id="终"><a href="#终" class="headerlink" title="终"></a>终</h4><p>这样，这个前端构建工具就实现了，我们可以通过：<br><code>npm install -g zst-web zst</code>来安装zst这个构建工具跟zst-web这个命令行构建工具。<br><code>zst-web [project name]</code>生成项目。</p>
+<p>完整代码在我的<a href="https://github.com/ZhangShuangV/zst-web" target="_blank" rel="external">github</a>中有，欢迎大家提意见。</p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/shell基本命令/" rel="next" title="shell基本命令">
+    下一篇：shell基本命令
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="前端构建工具的简易实现/" data-title="前端构建工具的简易实现" data-url="http://zhangshuang.top/前端构建工具的简易实现/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangshuang'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/1781288684" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/zhangshuangv" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰的网络日志</a>
+                
+                    <a class="social-link" href="http://blog.guijianpan.com/" target="_blank">倚楼听风雨</a>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism的技术博客</a>
+                
+                    <a class="social-link" href="http://www.zhangxinxu.com/wordpress/" target="_blank">鑫生活，鑫空间</a>
+                
+                    <a class="social-link" href="http://www.whycss.com/" target="_blank">前端网址导航whycss</a>
+                
+                    <a class="social-link" href="http://www.chenggang.win" target="_blank">Nice Day</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 zhangshuang.top, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=60653956" charset="UTF-8"></script>
+
+
+
+
+
+</body>
+</html>
