@@ -172,7 +172,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/前端/">
-                    前端 <span class="right">30 篇</span></a>
+                    前端 <span class="right">31 篇</span></a>
                 </a>
             </li>
 
@@ -188,7 +188,7 @@
 
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/前端/JavaScript/">
-                    JavaScript <span class="right">7 篇</span></a>
+                    JavaScript <span class="right">8 篇</span></a>
                 </a>
             </li>
 
@@ -210,6 +210,14 @@
 
         
 
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/Angularjs/">
+                    Angularjs <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/前端/插件开发/">
                     插件开发 <span class="right">1 篇</span></a>
@@ -221,6 +229,14 @@
             <li class="collapse-level-2" collapse-level="2">
                 <a class="no-padding" href="/categories/前端/插件开发/chrome/">
                     chrome <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/H5游戏/">
+                    H5游戏 <span class="right">7 篇</span></a>
                 </a>
             </li>
 
@@ -259,14 +275,6 @@
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/前端/H5游戏/">
-                    H5游戏 <span class="right">7 篇</span></a>
-                </a>
-            </li>
-
-        
-
-            <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/前端/nodejs/">
                     nodejs <span class="right">3 篇</span></a>
                 </a>
@@ -275,16 +283,16 @@
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/前端/用户体验/">
-                    用户体验 <span class="right">1 篇</span></a>
+                <a class="no-padding" href="/categories/前端/自动化/">
+                    自动化 <span class="right">1 篇</span></a>
                 </a>
             </li>
 
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/前端/自动化/">
-                    自动化 <span class="right">1 篇</span></a>
+                <a class="no-padding" href="/categories/前端/用户体验/">
+                    用户体验 <span class="right">1 篇</span></a>
                 </a>
             </li>
 
@@ -413,6 +421,49 @@
 
 
 <div id="article-list" class="container main-container">
+    
+        <article class="simple-article">
+    <div class="card">
+        <div class="card-content">
+            <div class="article-title">
+                
+    
+        <h1 class="indigo-link-context"><a href="/js作用域/">js作用域</a></h1>
+    
+
+
+            </div>
+
+            <time class="pink-link-context" datetime="2017-03-14T14:24:19.000Z"><a href="/js作用域/">2017-03-14</a></time>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/JavaScript/" class="chip pink lighten-1">JavaScript</a>
+        
+            <a href="/tags/面试/" class="chip pink lighten-1">面试</a>
+        
+    </div>
+
+
+
+            
+                <div class="entry pink-link-context">
+                    <h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><h5 id="引：Engine-Scope-Conversation"><a href="#引：Engine-Scope-Conversation" class="headerlink" title="引：Engine/Scope Conversation"></a>引：Engine/Scope Conversation</h5><p><img src="https://ooo.0o0.ooo/2017/03/24/58d4b5ac11a2d.png" alt="Engine/Scope Conversation"><br>from <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#enginescope-conversation">You Don’t Know JS: Scope &amp; Closures</a><br>这一章节，生动详细的向我们描述了js解析引擎是如何运行的，这对理解我们的作用域非常有帮助，有兴趣的可以瞅一眼。下面通过几个简单的题来巩固一下。</p>
+<h5 id="1-下面代码alert显示的内容是什么？"><a href="#1-下面代码alert显示的内容是什么？" class="headerlink" title="1.下面代码alert显示的内容是什么？"></a>1.下面代码<code>alert</code>显示的内容是什么？</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">function a() &#123;</div><div class="line">    var foo = 1;</div><div class="line">    b();</div><div class="line">&#125;</div><div class="line"></div><div class="line">function b() &#123;</div><div class="line">    alert(foo);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function c() &#123;</div><div class="line">    var foo = 1;</div><div class="line">    d();</div><div class="line">    function d() &#123;</div><div class="line">        alert(foo);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">a();</div><div class="line">c();</div></pre></td></tr></table></figure>
+<p>这道题主要考察的是js中变量的作用域的问题。运行<code>a()</code>，得到的结果是<code>foo is not defined</code>，且程序停止，不会再执行<code>c()</code>，如果把<code>a()</code>注释掉的话，会<code>alert(1)</code>。<br><code>function a(){}</code>中声明的变量<code>foo</code>是局部变量，无法被外界访问，所以<code>function b(){}</code>会报错。<br>
+                </div>
+            
+        </div>
+
+        
+        <div class="card-action pink-link-context">
+            <a href="/js作用域/">阅读全文</a>
+        </ div>
+        
+    </div>
+</article>
+
     
         <article class="simple-article">
     <div class="card">
@@ -710,47 +761,6 @@
 </article>
 
     
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/TypeScript初试（二）/">TypeScript初试（二）</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2016-12-18T04:46:28.000Z"><a href="/TypeScript初试（二）/">2016-12-18</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/TypeScript/" class="chip pink lighten-1">TypeScript</a>
-        
-            <a href="/tags/egret/" class="chip pink lighten-1">egret</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry pink-link-context">
-                    <p>在js中，变量的声明一般用var，但是在上一次分享中大家可能也看到了，当时采用的变量声明的关键字为<code>let</code>。那么这个let是个什么东西呢？<br>let 是es6新增的一个变量声明关键字，用来声明局部变量。同时let也是ts中推荐的声明变量的关键字。let声明的变量是局部变量，它的作用于是块级作用域。<br>
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action pink-link-context">
-            <a href="/TypeScript初试（二）/">阅读全文</a>
-        </ div>
-        
-    </div>
-</article>
-
-    
 
     <ul class="pagination center-align">
     <li class="">
@@ -765,6 +775,8 @@
         <li class="waves-effect"><a href="/page/3">3</a></li>
     
         <li class="waves-effect"><a href="/page/4">4</a></li>
+    
+        <li class="waves-effect"><a href="/page/5">5</a></li>
     
     
     <li class="">

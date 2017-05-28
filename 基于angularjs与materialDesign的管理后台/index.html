@@ -1,0 +1,809 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>基于angularjs与materialDesign的管理后台 | 求知若饥，谦虚若愚</title>
+    <meta name="author" content="Zhang Shuang">
+    
+    <meta name="description" content="张爽的个人博客">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="基于angularjs与materialDesign的管理后台"/>
+    <meta property="og:site_name" content="Zhang Shuang&#39;s Blog"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="Zhang Shuang&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">Zhang Shuang&#39;s Blog</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="/img/header.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">张爽</p>
+                        <p class="desc">Web前端/舞蹈</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/前端/">
+                    前端 <span class="right">31 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/TypeScript/">
+                    TypeScript <span class="right">4 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/JavaScript/">
+                    JavaScript <span class="right">8 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/es6/">
+                    es6 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/vue/">
+                    vue <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/JavaScript/Angularjs/">
+                    Angularjs <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/插件开发/">
+                    插件开发 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/插件开发/chrome/">
+                    chrome <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/H5游戏/">
+                    H5游戏 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Draw/">
+                    Draw <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/echarts/">
+                    echarts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/egret/">
+                    egret <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/前端/Draw/highcharts/">
+                    highcharts <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/nodejs/">
+                    nodejs <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/自动化/">
+                    自动化 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/用户体验/">
+                    用户体验 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/Hybrid/">
+                    Hybrid <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/前端/兼容性/">
+                    兼容性 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/shell/">
+                    shell <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/工具/">
+                    工具 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/前端/">前端</a><a class="breadcrumb" href="/categories/前端/JavaScript/">JavaScript</a><a class="breadcrumb" href="/categories/前端/JavaScript/Angularjs/">Angularjs</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>基于angularjs与materialDesign的管理后台</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2017-05-28T05:17:54.000Z"><a href="/基于angularjs与materialDesign的管理后台/">2017-05-28</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/JavaScript/" class="chip pink lighten-1">JavaScript</a>
+        
+            <a href="/tags/es6/" class="chip pink lighten-1">es6</a>
+        
+            <a href="/tags/Angularjs/" class="chip pink lighten-1">Angularjs</a>
+        
+            <a href="/tags/material-design/" class="chip pink lighten-1">material design</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#目录结构"><span class="section table-of-contents-text">目录结构</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#入口文件-app-js"><span class="section table-of-contents-text">入口文件 app.js</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#Dependencies-项目依赖"><span class="section table-of-contents-text">Dependencies 项目依赖</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#View-项目页面，包括其中的Controller及template等"><span class="section table-of-contents-text">View 项目页面，包括其中的Controller及template等</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#Service-服务"><span class="section table-of-contents-text">Service 服务</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#主程序，所有注入的内容都会在这里体现。"><span class="section table-of-contents-text">主程序，所有注入的内容都会在这里体现。</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#登录模块"><span class="section table-of-contents-text">登录模块</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#导航模块"><span class="section table-of-contents-text">导航模块</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#服务、请求"><span class="section table-of-contents-text">服务、请求</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#material-design"><span class="section table-of-contents-text">material design</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#布局"><span class="section table-of-contents-text">布局</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#Form表单"><span class="section table-of-contents-text">Form表单</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#card"><span class="section table-of-contents-text">card</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#富文本"><span class="section table-of-contents-text">富文本</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>最近换了个公司，乱七八糟的事儿比较多，更新耽误了些…<br>之前还看过一段时间的Vuejs，想着新公司如果做项目的话，用Vuejs去做。然而新公司的技术架构pc端更倾向于Angularjs，而且有专门的前端架构，架子什么的都搭的差不多了，所以来到新公司的第一个项目就用Angularjs做的。<br><a id="more"></a><br>通过这个项目，我对eslint、gitignore、proxy也算有了接触。毕竟以前做项目的时候也没关注过这些。这个项目是用gulp跟webpack配合使用的。也是直接用的旧有的架子，没做什么改动。<br>现在就说一下用Angularjs做的这个项目吧。</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><ul>
+<li>app: 源代码<ul>
+<li>views: 一个页面一个文件夹<ul>
+<li>*.ctrl Controller</li>
+<li>*.html Controller对应的页面</li>
+<li>*.scss Controller对应页面的样式表</li>
+</ul>
+</li>
+<li>services: 服务，一个页面可能有多个服务，与页面一一对应</li>
+<li>filters: 过滤器</li>
+<li>app.js: 项目入口文件</li>
+<li>index.html: index</li>
+</ul>
+</li>
+<li>dest: 编译后代码存放的位置，源码中不存在</li>
+<li>.eslintrc.json: 语法检查</li>
+<li>.gitignore: git忽略目录</li>
+<li>.babelrc: babel编译配置</li>
+<li>… 其他配置</li>
+</ul>
+<h2 id="入口文件-app-js"><a href="#入口文件-app-js" class="headerlink" title="入口文件 app.js"></a>入口文件 app.js</h2><p>这个项目使用了angular-resource、angular-material等框架，因为Angularjs是依赖注入的，所以所有依赖的框架、插件甚至服务过滤器等等都需要import进来，并且注入到angular程序中。</p>
+<h4 id="Dependencies-项目依赖"><a href="#Dependencies-项目依赖" class="headerlink" title="Dependencies 项目依赖"></a>Dependencies 项目依赖</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">import angular from &apos;angular&apos;;</div><div class="line">import &apos;angular-material&apos;;</div><div class="line">import &apos;angular-resource&apos;;</div><div class="line">...</div></pre></td></tr></table></figure>
+<h4 id="View-项目页面，包括其中的Controller及template等"><a href="#View-项目页面，包括其中的Controller及template等" class="headerlink" title="View 项目页面，包括其中的Controller及template等"></a>View 项目页面，包括其中的Controller及template等</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">import &#123; Template, Controller &#125; from &apos;./views/page1/page1.ctrl&apos;;</div><div class="line">...</div></pre></td></tr></table></figure>
+<h4 id="Service-服务"><a href="#Service-服务" class="headerlink" title="Service 服务"></a>Service 服务</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">import IndexMenuResource from &apos;./services/index-menu.resource&apos;</div></pre></td></tr></table></figure>
+<h4 id="主程序，所有注入的内容都会在这里体现。"><a href="#主程序，所有注入的内容都会在这里体现。" class="headerlink" title="主程序，所有注入的内容都会在这里体现。"></a>主程序，所有注入的内容都会在这里体现。</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">angular.module(&apos;app&apos;, [</div><div class="line">    &apos;ngResource&apos;, &apos;ngRoute&apos;, &apos;ngMaterial&apos; ...</div><div class="line">])</div><div class="line">.controller(&apos;controller&apos;, Controller)</div><div class="line">.service(&apos;IndexMenuResource&apos;, IndexMenuResource)</div><div class="line">.config([&apos;$routeProvider&apos;, function($routeProvider) &#123;</div><div class="line">    $routeProvider.when(&apos;/&apos;, &#123;</div><div class="line">        template: Template,</div><div class="line">        controller: Controller,</div><div class="line">        controllerAs: &apos;ctrl&apos;</div><div class="line">        &#125;) ...</div><div class="line">    &#125;]);</div></pre></td></tr></table></figure>
+<p>在这里，我每一个只写了一个，需要说明一点，使用<code>controllerAs</code>，在其他页面的对应的controller中，就可以不用<code>$scope</code>，转而使用<code>this</code>就可以了。然后需要在controller对应的template中，每一个变量前面都加上controllerAs的内容，也就是上文中的<code>ctrl</code>。<br>这个地方也可以将路由模块抽离出来，但是，看着这个文件也不大，就放在这里吧，维护起来也还算好维护。</p>
+<h2 id="登录模块"><a href="#登录模块" class="headerlink" title="登录模块"></a>登录模块</h2><p>登录模块是最后加的，原型图中也没有这个，但是感觉作为一个后台管理系统，如果没有这个模块，岂不是所有人知道网址就能随意修改内容了么…于是跟后端同事商量了一下，就把这个做上了。因为时间比较紧，项目经理就直接说，暂不需要权限管理，注册之类的，直接把这个东西在后台写死就好。但是后端同学还是为user单独建了张表，把权限也留出口来，以后如果有需要直接加上就好了。  </p>
+<p>在这里我就说一下前台是如何实现的：<br>在index.html中，写了一个跟页面平级的div，用于放置登录模块。这里用到了<code>ng-if</code>这个来控制是否显示登录模块。在登录成功后，我会将用户信息用session存到浏览器缓存中，然后将控制登录模块是否显示的字段置为false，然后，在跟controller加载的时候就去session中检查用户信息。这样就可以实现登录成功后，无论怎样刷新，都不会再显示这个页面。</p>
+<p>我是用的es6语法写的这个项目，所以在这里也放一下es6写的controller：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">export class RootController &#123;</div><div class="line">    constructor(IndexMenuResource, User, $mdDialog) &#123;</div><div class="line">        this.menuRes = IndexMenuResource;</div><div class="line">        this.user = User;</div><div class="line">        this.$mdDialog = $mdDialog;</div><div class="line"></div><div class="line">        this.isUserLogin = false;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在constructor构造函数中，将这个controller需要的资源注入进来。这个<code>isUserLogin</code>如果按照之前的写法，需要注入<code>$scope</code>，并将<code>this</code>替换为<code>$scope</code>。但是之前在配置路由的时候提到过，使用了<code>controllerAs</code>这个配置，所以这里就不需要使用<code>$scope</code>。再说一下template中是如何配合使用的:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;div ng-if=&quot;root.isUserLogin&quot;&gt;</div><div class="line"></div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>这个<code>root</code>就是之前配置的controllerAs，其他页面以此类推。</p>
+<h2 id="导航模块"><a href="#导航模块" class="headerlink" title="导航模块"></a>导航模块</h2><p>回想刚开始做前端的时候，恨不得所有的东西都在html中写死，还美其名曰加快加载进度。但是现在看来，像导航这种东西，还是配置成数据，然后通过各个框架的循环<code>ng-repeat或v-for</code>等这种东西使用起来，才算是优雅（我认为的…）。这样看起来页面不会有那么多重复的东西，显得也比较简洁。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;item in root.menus&quot; ng-click=&quot;root.activeMenu($index)&quot; ng-class=&quot;item.active? &apos;zs-toolbar-active&apos; : &apos;&apos;&quot;&gt;</div><div class="line">        &lt;md-button href=&#123;&#123;item.url&#125;&#125; class=&quot;md-icon-button&quot;&gt;</div><div class="line">            &lt;md-icon class=&quot;fl&quot;&gt;&#123;&#123;item.icon&#125;&#125;&lt;/md-icon&gt;</div><div class="line">            &lt;span class=&quot;fl&quot;&gt;&#123;&#123;item.cnt&#125;&#125;&lt;/span&gt;</div><div class="line">        &lt;/md-button&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<p>Angularjs的服务具体是什么我就不说了，这里我只是说一下es6是怎么写的。像这个导航模块的服务就相对简单：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">export default function IndexMenuResource() &#123;</div><div class="line">    return [</div><div class="line">        &#123;cnt: &apos;管理1&apos;, icon: &apos;&apos;, url: &apos;#/manager1&apos;, active: false&#125;,</div><div class="line">        ...</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="服务、请求"><a href="#服务、请求" class="headerlink" title="服务、请求"></a>服务、请求</h2><p>上面的导航模块，服务只有这一个功能，所以只是用了一个function，然后export出去就可以了。如果服务功能多一点的话，就需要使用es6的class，同样，需要在constructor中引入依赖。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/**</div><div class="line"> * 单条活动资源。</div><div class="line"> */</div><div class="line">export default class ActivityItemResourceService&#123;</div><div class="line"></div><div class="line">  /**</div><div class="line">   * 引入$resource模块</div><div class="line">   * @param $resource</div><div class="line">   */</div><div class="line">  constructor($resource) &#123;</div><div class="line">    this.$resource = $resource;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line">  /**</div><div class="line">   * 编辑/新建活动</div><div class="line">   * @return &#123; 单条活动资源 &#125;</div><div class="line">   */</div><div class="line">  resActivityItem() &#123;</div><div class="line">    return this.$resource(&apos;cardactivity/activitydetail&apos;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  /**</div><div class="line">   * 保存活动</div><div class="line">   * @returns &#123; 更新服务器中的活动资源 &#125;</div><div class="line">   */</div><div class="line">  saveActivityItem() &#123;</div><div class="line">    return this.$resource(&apos;cardactivity/savecardactivity&apos;, &#123;&#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>从上面的代码中可以看出，项目的前后端交互部分是用的<code>$resource</code>，接口是用的restful风格的。<br>最开始我一直想在服务中返回的就是请求回来的资源，但是通过几次尝试，发现非常的不好用。无论是使用<code>$q</code>还是在服务中本地维护一个对象，将请求回来的数据放进去，发现都不好用。最终，在服务中体现的就是上面的样子：实际上是每个资源的地址。在controller中调用时，写上调用这个资源需要的方法。然后在callback中赋值给本地维护的对象。</p>
+<h2 id="material-design"><a href="#material-design" class="headerlink" title="material design"></a>material design</h2><p>最初要求项目开发周期较短，并且这个项目只有非常简陋的原型图，所以前端老大说使用angular-material-design来作为UI框架。之前也没接触过，然后就上官网去看demo，需要什么样的样式，就去官网上找对应的demo，然后就大体知道了些。</p>
+<h4 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h4><p>这个UI框架跟bootstrap还是有相似之处的，比如说那个布局，确实非常好用。如果想让内容上下分布的话，就用<code>layout=&quot;column&quot;</code>；如果想让内容左右分布的话，就用<code>layout=&quot;row&quot;</code>。内容的大小就可以用<code>flex</code>属性来设置。<br><code>flex</code>属性的最大值为100，设置的最小步长为5，也就是可以设置为10、设置为15可以，但是设置为13就不行。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;div layout=&quot;row&quot;&gt;</div><div class="line">    &lt;div flex=&quot;10&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;div flex=&quot;90&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="Form表单"><a href="#Form表单" class="headerlink" title="Form表单"></a>Form表单</h4><p>materialDesign中的input都是没有边框的，并且它的input的label是位于input输入框内的，不是左右或上下分离的，这在有很多input的form表单中就显得略微有些怪异。这个就算是加上边框，看起来也略微有点别扭，不过也没办法…既然当初是为了节省时间成本选用的这个框架，如果还是要自定义那么多样式的话，也没必要用UI框架了。<br>如果使用validate功能的话，需要引入<code>angular-messages</code>，但是在引入这个插件的时候，发现报错了，进入源码把带有<code>angularVersion</code>的那一行删掉就好了。这个地方我也不知道是怎么回事，尝试换过angularjs的版本及angular-messages的版本，但是都没有解决，只能删掉这行了。</p>
+<h4 id="card"><a href="#card" class="headerlink" title="card"></a>card</h4><p>虽然看官网的demo，card基本是作为类似于微信分享那样，带有图片之类的。但是因为样式设计原因，我更喜欢把他作为一个个区块去使用，带有box-shadow的样式看起来也不错。</p>
+<h2 id="富文本"><a href="#富文本" class="headerlink" title="富文本"></a>富文本</h2><p>这个富文本模块最初的需求中有这个，但是除了管理后台以外，对应的用户界面也是由我开发，找了半天也没找到富文本到底是在哪里使用。后来跟产品沟通了一下，用多行文本<code>textarea</code>就满足需求了。<br>但是自己也尝试了一下，从网上找了个CKEditor的插件，自己写了个demo可以使用。但是用到我的这个项目中就出现问题，写了指令之后也一直报错，找了半天原因也没找到，就暂时放弃了，等再有这个需求的时候再研究吧。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个项目还是让我有很大收获的，除了eslint这种东西，本地开发需要的跨域问题也通过proxy得以解决。也对Angularjs以及angular-material-design有了一定的了解。当然还有开动脑筋把简陋的原型图变成web网站的间接的审美锻炼……</p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/前端构建工具的简易实现/" rel="next" title="前端构建工具的简易实现">
+    下一篇：前端构建工具的简易实现
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="基于angularjs与materialDesign的管理后台/" data-title="基于angularjs与materialDesign的管理后台" data-url="http://zhangshuang.top/基于angularjs与materialDesign的管理后台/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangshuang'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/1781288684" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/zhangshuangv" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰的网络日志</a>
+                
+                    <a class="social-link" href="http://blog.guijianpan.com/" target="_blank">倚楼听风雨</a>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism的技术博客</a>
+                
+                    <a class="social-link" href="http://www.zhangxinxu.com/wordpress/" target="_blank">鑫生活，鑫空间</a>
+                
+                    <a class="social-link" href="http://www.whycss.com/" target="_blank">前端网址导航whycss</a>
+                
+                    <a class="social-link" href="http://www.chenggang.win" target="_blank">Nice Day</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 zhangshuang.top, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=60653956" charset="UTF-8"></script>
+
+
+
+
+
+</body>
+</html>
