@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title><![CDATA[基于Vuejs、vue-router、iview的管理后台]]></title>
+      <url>http://zhangshuang.top/%E5%9F%BA%E4%BA%8EVuejs%E3%80%81vue-router%E3%80%81iview%E7%9A%84%E7%AE%A1%E7%90%86%E5%90%8E%E5%8F%B0/</url>
+      <content type="html"><![CDATA[<p>上一篇分享的是使用angularjs及materialdesign的管理后台前端页面的实现。因为感觉input的输入框实在是太丑了，并且用户端的页面我早已开发完毕，就等着后端给接口了，所以就萌生出了使用心中一直念念不忘的Vuejs来实现一版管理后台。<br><a id="more"></a><br>这个使用了Vue-cli来构建vue架构，使用vue-router来搭建路由，使用iview来作为UI框架。</p>
+<h2 id="项目构建"><a href="#项目构建" class="headerlink" title="项目构建"></a>项目构建</h2><ol>
+<li><p>安装nodejs<br><a href="http://blog.zhangshuang.top/nodejs%E5%AE%89%E8%A3%85%E5%8F%8A%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" target="_blank" rel="external">nodejs安装及常用快捷键</a><br>建议安装nvm来控制nodejs的版本，上面的链接里有详细的步骤，包括启动node服务常用的PM2等等…</p>
+</li>
+<li><p>全局安装webpack、vue-cli脚手架<br><code>npm install -g webpack vue-cli</code>;</p>
+</li>
+<li><p>创建工程<br><code>vue init webpack-simple &lt;project name&gt;</code><br>这里直接一路回车就可以了。<br>注意：工程名不能是中文</p>
+</li>
+<li><p>安装项目依赖<br>进入工程，输入<code>npm install</code>就可以了。</p>
+</li>
+<li><p>安装路由模块vue-router、网络请求模块vue-resource模块<br><code>npm install --save vue-router vue-resource</code><br>这个会安装到<code>package.json</code>的<code>dependencies</code>中。</p>
+</li>
+<li><p>安装UI框架 iView<br><code>npm install --save iview</code></p>
+</li>
+<li><p>使用iView、vue-router、vue-resource</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># main.js</div><div class="line">import Vue from &apos;vue&apos;;</div><div class="line">import VueRouter from &apos;vue-router&apos;;</div><div class="line">import VueResource from &apos;vue-resource&apos;;</div><div class="line">import iview from &apos;iview&apos;;</div><div class="line">import &apos;iview/dist/styles/iview.css&apos;;</div><div class="line">import App from &apos;./App.vue&apos;;</div><div class="line"></div><div class="line">Vue.config.debug = true;</div><div class="line">Vue.use(VueRouter);</div><div class="line">Vue.use(VueResource);</div><div class="line">Vue.use(iview);</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改webpack.config.js配置文件<br>因为使用iView需要引用其css，但是最初的webpack.config.js文件里面并没有配置读取css文件和字体文件或者有的设定的有问题，所以这里需要我们自行修改一下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: /\.js$/,</div><div class="line">    loader: &apos;babel-loader&apos;,</div><div class="line">    exclude: /node_modules/</div><div class="line"> &#125;,</div><div class="line"> &#123;</div><div class="line">    test: /\.css$/,</div><div class="line">    loader: &quot;style-loader!css-loader&quot;</div><div class="line"> &#125;,</div><div class="line"> &#123;</div><div class="line">    test: /\.(eot|woff|woff2|ttf)([\\?]?.*)$/,</div><div class="line">    loader: &quot;file-loader&quot;</div><div class="line"> &#125;,</div><div class="line"> &#123;</div><div class="line">    test: /\.(png|jpg|gif|svg)$/,</div><div class="line">    loader: &apos;file-loader&apos;,</div><div class="line">    options: &#123;</div><div class="line">      name: &apos;[name].[ext]?[hash]&apos;</div><div class="line">    &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>完整的配置如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./src/main.js&apos;,</div><div class="line">  output: &#123;</div><div class="line">    path: path.resolve(__dirname, &apos;./dist&apos;),</div><div class="line">    publicPath: &apos;/dist/&apos;,</div><div class="line">    filename: &apos;build.js&apos;</div><div class="line">  &#125;,</div><div class="line">  module: &#123;</div><div class="line">    loaders: [</div><div class="line">      &#123;</div><div class="line">        test: /\.vue$/,</div><div class="line">        loader: &apos;vue-loader&apos;,</div><div class="line">        options: &#123;</div><div class="line">          loaders: &#123;</div><div class="line">          &#125;</div><div class="line">          // other vue-loader options go here</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.js$/,</div><div class="line">        loader: &apos;babel-loader&apos;,</div><div class="line">        exclude: /node_modules/</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.css$/,</div><div class="line">        loader: &quot;style-loader!css-loader&quot;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.(eot|woff|woff2|ttf)([\\?]?.*)$/,</div><div class="line">        loader: &quot;file-loader&quot;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.(png|jpg|gif|svg)$/,</div><div class="line">        loader: &apos;file-loader&apos;,</div><div class="line">        options: &#123;</div><div class="line">          name: &apos;[name].[ext]?[hash]&apos;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  resolve: &#123;</div><div class="line">    alias: &#123;</div><div class="line">      &apos;vue$&apos;: &apos;vue/dist/vue.esm.js&apos;,</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  devServer: &#123;</div><div class="line">    historyApiFallback: true,</div><div class="line">    noInfo: true</div><div class="line">  &#125;,</div><div class="line">  performance: &#123;</div><div class="line">    hints: false</div><div class="line">  &#125;,</div><div class="line">  devtool: &apos;#eval-source-map&apos;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">if (process.env.NODE_ENV === &apos;production&apos;) &#123;</div><div class="line">  module.exports.devtool = &apos;#source-map&apos;;</div><div class="line">  // http://vue-loader.vuejs.org/en/workflow/production.html</div><div class="line">  module.exports.plugins = (module.exports.plugins || []).concat([</div><div class="line">    new webpack.DefinePlugin(&#123;</div><div class="line">      &apos;process.env&apos;: &#123;</div><div class="line">        NODE_ENV: &apos;&quot;production&quot;&apos;</div><div class="line">      &#125;</div><div class="line">    &#125;),</div><div class="line">    new webpack.optimize.UglifyJsPlugin(&#123;</div><div class="line">      sourceMap: true,</div><div class="line">      compress: &#123;</div><div class="line">        warnings: false</div><div class="line">      &#125;</div><div class="line">    &#125;),</div><div class="line">    new webpack.LoaderOptionsPlugin(&#123;</div><div class="line">      minimize: true</div><div class="line">    &#125;)</div><div class="line">  ]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>启动项目<br><code>npm run dev</code></li>
+</ol>
+<h2 id="UI框架-iView"><a href="#UI框架-iView" class="headerlink" title="UI框架 iView"></a>UI框架 iView</h2><p>因为之前angular项目的经历，所以在UI框架的选择中，就很是花了一番心思。最初打算使用element，后来从ant-design的官网上看到了iview，读了读作者的简介之后深有感触，感觉UI确实看起来不错，所以就选择了这个框架。<br>这个UI框架因为是国人弄的，所以看起来基本就是0难度，上手非常容易。需要的样式都可以从官网的demo中找到。</p>
+<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><p>通过import引入iview，并且调用<code>vue.use()</code>方法即可使用iView框架。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">import iview from &apos;iview&apos;;</div><div class="line">vue.use(iview);</div></pre></td></tr></table></figure></p>
+<h4 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h4><p>iview的布局是通过<code>Row</code>、<code>Col</code>标签实现的，但是<code>Col</code>标签必须位于<code>Row</code>标签里面。它的栅格化布局把页面分为了24份。通过给变迁添加<code>span</code>属性就可以实现：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;Row&gt;</div><div class="line">    &lt;Col span=&quot;22&quot;&gt;</div><div class="line">        &lt;Icon type=&quot;ios-paper&quot; size=&quot;40&quot;&gt;&lt;/Icon&gt;</div><div class="line">        &lt;h3&gt;活动管理&lt;/h3&gt;</div><div class="line">    &lt;/Col&gt;</div><div class="line">    &lt;Col span=&quot;2&quot; class=&quot;activity-manager-button-add&quot;&gt;</div><div class="line">        &lt;Button type=&quot;primary&quot;&gt;活动&lt;/Button&gt;</div><div class="line">    &lt;/Col&gt;</div><div class="line">&lt;/Row&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="Icon"><a href="#Icon" class="headerlink" title="Icon"></a>Icon</h4><p>合理的使用icon可以使项目变得好看一些，通过给iview中的Icon标签设置type属性，就可以显示出icon图片来。iview提供了很多icon，虽然已手机类的居多，但是还是能找到相似的使用的。设置size属性就可以改变icon的大小。</p>
+<h4 id="table"><a href="#table" class="headerlink" title="table"></a>table</h4><p>之前的angular项目中，table是自己写的，但是发现iview中table效果很棒，所以直接就用的iview的Table标签。<br><code>&lt;Table :columns=&quot;activityTable&quot; :data=&quot;activityList&quot;&gt;&lt;/Table&gt;</code><br>template中只需要这一行就可以设置好table，columns属性是设置table的表头，</p>
+<h6 id="Issue"><a href="#Issue" class="headerlink" title="Issue:"></a>Issue:</h6><p>Table表单暂时不能在变化宽度的时候自适应，暂时还未开放宽度设定接口。</p>
+<h4 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h4><p>iview的Button样式也很好看，通过设置<code>type</code>属性就可以设置不同的样式，<code>disable</code>属性可以控制是否可以点击。</p>
+<h4 id="…"><a href="#…" class="headerlink" title="…"></a>…</h4><p>全部功能可以从官网上找到，上手非常简单，基本看一眼就会<a href="https://www.iviewui.com" target="_blank" rel="external">iView官网</a></p>
+<h2 id="路由-vue-router"><a href="#路由-vue-router" class="headerlink" title="路由 vue-router"></a>路由 vue-router</h2><p>路由用的是官方支持的<a href="http://vuejs.github.io/vue-router/" target="_blank" rel="external">vue-router</a>。<br>如果要在一个模块化工程中使用vue-router，需要使用<code>vue.use()</code>方法，用以安装路由功能。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">import VueRouter from &apos;vue-router&apos;;</div><div class="line">vue.use(VueRouter);</div></pre></td></tr></table></figure></p>
+<h4 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h4><p>template中，路由通过<code>router-link</code>标签来使用，设置<code>to</code>属性可以设置跳转位置：<br><code>&lt;router-link :to=&quot;/about&quot;&gt;Go to About&lt;/router-link&gt;</code>，这个在项目运行时，会渲染成<code>&lt;a href=&quot;&quot;&gt;&lt;/a&gt;</code><br>跟AngularJs一样，Vuejs也需要一个类似于<code>ng-view</code>的东西来放置替换进来的template。<code>&lt;router-view&gt;&lt;/router-view&gt;</code></p>
+<h4 id="Js"><a href="#Js" class="headerlink" title="Js"></a>Js</h4><p>在创建路由之前，需要先把要使用的模块引入，当然也可以从本文件创建一个，不过这不太符合组件化的初衷。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">import home from &apos;./component/home.vue&apos;;</div><div class="line">import about from &apos;./component/about.vue&apos;;</div></pre></td></tr></table></figure></p>
+<p>引入模块之后，需要定义路由，并且创建一个VueRouter的实例。这里通过一步来完成这个过程。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">const router = new VueRouter(&#123;</div><div class="line">    base: __dirname,</div><div class="line">    routes: [</div><div class="line">        &#123;path: &apos;/home&apos;, component: home&#125;,</div><div class="line">        &#123;path: &apos;/about&apos;, component: about&#125;</div><div class="line">    ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>最后要把VueRouter挂载到应用中：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">const app = new Vue(&#123;</div><div class="line">    router</div><div class="line">&#125;).$mount(&apos;#app&apos;);</div></pre></td></tr></table></figure></p>
+<h4 id="动态路由匹配"><a href="#动态路由匹配" class="headerlink" title="动态路由匹配"></a>动态路由匹配</h4><p>就像restful风格一样，有些内容会重复使用同一个模块。比如有多个user，共同使用user.vue这个组件模块，那么我们就可以在router中使用动态路径参数来实现这个效果：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">    path: &apos;/pollConfig/:pollid&apos;,</div><div class="line">    component: pollConfig</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中，<code>:pollid</code>就是动态的，像<code>/pollConfig/1</code>、<code>/pollConfig/2</code>都能通过上面的路由，匹配到<code>pollConfig</code>这个组件。</p>
+<h4 id="Js中使用路由"><a href="#Js中使用路由" class="headerlink" title="Js中使用路由"></a>Js中使用路由</h4><p>如果我们想实现在js中进行跳转，如<code>window.location.href</code>这种效果时，通过设置<code>this.$router.push()</code>就可以实现：<br><code>this.$router.push({path: &#39;/home&#39;})</code><br>除了<code>push</code>以外还有几种方法，这个跟h5的history的API比较像</p>
+<h4 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h4><p>举一个例子来说，如果我们访问<code>/home</code>这个路由时，访问到的是<code>home</code>这个组件模块，但是我们在直接访问这个网站的时候，一般路径都是<code>/</code>，这里就需要我们进行重定向的设置，将<code>/</code>重定向到<code>/home</code>：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">    path: &apos;/&apos;,</div><div class="line">    redirect: &apos;/home&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="history模式"><a href="#history模式" class="headerlink" title="history模式"></a>history模式</h4><p>vue-router默认使用hash模式来模拟一个完整的URL，但是这个并不怎么好看… 我们可以通过设置<code>history</code>模式，使得URL看起来跟正常的一模一样。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">const router = new VueRouter(&#123;</div><div class="line">    mode: &apos;history&apos;,</div><div class="line">    routes: [...]</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>但是这个需要后端同学进行相应的设置。因为我这个只是写的前端demo，后端同学一直在忙别的接口，所以这个地方我并没有过多的尝试。<br>贴个后端设置的链接<a href="http://router.vuejs.org/zh-cn/essentials/history-mode.html" target="_blank" rel="external">vue-router History 模式</a></p>
+<h4 id="路由效果"><a href="#路由效果" class="headerlink" title="路由效果"></a>路由效果</h4><p>通过在<code>&lt;router-view&gt;&lt;/router-view&gt;</code>的外面</p>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>如果项目比较大的话，可以新建一个跟<code>main.js</code>平级的<code>router.js</code>来配置路由信息，然后在<code>main.js</code>中引用就好了。如果项目路由不算太多的话，还是直接在<code>main.js</code>中写就好了。</p>
+<h2 id="vue-resource"><a href="#vue-resource" class="headerlink" title="vue-resource"></a>vue-resource</h2><p>这个跟angular-resource使用方法基本一致，这里就不在说了。贴个git地址：<a href="https://github.com/pagekit/vue-resource" target="_blank" rel="external">vue-resource</a></p>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a href="https://github.com/ZhangShuangV/vue-boss/tree/master" target="_blank" rel="external">ZhangShuangV/vue-boss</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[基于angularjs与materialDesign的管理后台]]></title>
       <url>http://zhangshuang.top/%E5%9F%BA%E4%BA%8Eangularjs%E4%B8%8EmaterialDesign%E7%9A%84%E7%AE%A1%E7%90%86%E5%90%8E%E5%8F%B0/</url>
       <content type="html"><![CDATA[<p>最近换了个公司，乱七八糟的事儿比较多，更新耽误了些…<br>之前还看过一段时间的Vuejs，想着新公司如果做项目的话，用Vuejs去做。然而新公司的技术架构pc端更倾向于Angularjs，而且有专门的前端架构，架子什么的都搭的差不多了，所以来到新公司的第一个项目就用Angularjs做的。<br><a id="more"></a><br>通过这个项目，我对eslint、gitignore、proxy也算有了接触。毕竟以前做项目的时候也没关注过这些。这个项目是用gulp跟webpack配合使用的。也是直接用的旧有的架子，没做什么改动。<br>现在就说一下用Angularjs做的这个项目吧。</p>
@@ -861,6 +915,13 @@
     </entry>
     
     <entry>
+      <title><![CDATA[读书]]></title>
+      <url>http://zhangshuang.top/reading/index.html</url>
+      <content type="html"><![CDATA[<p>hi</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于]]></title>
       <url>http://zhangshuang.top/about/index.html</url>
       <content type="html"><![CDATA[<p>我叫张爽，91年出生，山东人。  </p>
@@ -873,13 +934,6 @@
 <p>个人爱好广泛，小学时学过二胡（7级）、足球（守门员）、篮球（高中时期比较痴迷）、游泳健身（在大马交换期间隔天游泳隔天健身，在青岛的时候，夏天周末就游到防鲨网几个来回）。最近没大有时间锻炼，身体素质下降很多，争取在稳定下来之后，再寻找个游泳馆锻炼一下。其他的都属于菜鸟水准，欢迎网友们凑不齐人的时候call我。  </p>
 <p>QQ: 547258574<br>Phone: 15711288669<br>Address: 北京朝阳望京<br>WeChat: 二维码 <img src="https://ooo.0o0.ooo/2017/02/08/589b3fdd81701.png" alt="二维码">     </p>
 <p>感觉现在的自己冲劲有余，虽然社会阅历尚浅、资质尚薄，不过一切困难都是纸老虎 ：）  </p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[读书]]></title>
-      <url>http://zhangshuang.top/reading/index.html</url>
-      <content type="html"><![CDATA[<p>hi</p>
 ]]></content>
     </entry>
     
